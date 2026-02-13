@@ -5,6 +5,7 @@ import { HeroSection } from './components/HeroSection';
 import { Navigation } from './components/Navigation';
 import { ProjectSection } from './components/ProjectSection';
 import { SkillsSection } from './components/SkillsSection';
+import { TroubleshootingSection } from './components/TroubleshootingSections';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <AboutSection />
         <SkillsSection />
         <ProjectSection />
+        <TroubleshootingSection />
         <ArchitectureSection />
         <ExperienceSection />
       </main>

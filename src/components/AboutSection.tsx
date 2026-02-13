@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
+import { ABOUT_DATA } from '@/constants/about';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -11,7 +12,6 @@ const fadeInUp = {
 export function AboutSection() {
   return (
     <section id='about' className='relative px-6 py-24 md:py-32'>
-      {/* Background glow */}
       <div className='absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
 
       <div className='mx-auto max-w-7xl'>
@@ -20,7 +20,7 @@ export function AboutSection() {
             01 &mdash; About
           </span>
           <h2 className='text-3xl font-bold tracking-tight text-foreground md:text-4xl'>
-            Who I Am
+            {ABOUT_DATA.title}
           </h2>
         </motion.div>
 
@@ -31,39 +31,9 @@ export function AboutSection() {
             className='md:col-span-3'
           >
             <div className='space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg'>
-              <p>
-                My journey into frontend development started from an unexpected
-                place:
-                <span className='font-semibold text-foreground'>
-                  {' '}
-                  Game Localization
-                </span>
-                . Working across languages and cultures taught me the precision
-                and attention to detail that I now bring to building user
-                interfaces.
-              </p>
-              <p>
-                I was captivated by how{' '}
-                <span className='text-cyan-400'>
-                  static text transforms into dynamic, interactive content
-                </span>{' '}
-                on screen. That curiosity evolved into a deep passion for
-                structuring data flow, managing complex application states, and
-                crafting seamless user experiences.
-              </p>
-              <p>
-                Today, I apply an analytical approach to business logic, with
-                expertise in{' '}
-                <span className='rounded border border-cyan-500/20 bg-cyan-500/5 px-1.5 py-0.5 font-mono text-sm text-cyan-400'>
-                  Zustand
-                </span>{' '}
-                for state management and{' '}
-                <span className='rounded border border-cyan-500/20 bg-cyan-500/5 px-1.5 py-0.5 font-mono text-sm text-cyan-400'>
-                  TanStack Query
-                </span>{' '}
-                for server-state synchronization, building applications that are
-                both powerful and maintainable.
-              </p>
+              {ABOUT_DATA.description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </motion.div>
 
@@ -78,12 +48,7 @@ export function AboutSection() {
                   Quick Facts
                 </h3>
                 <div className='space-y-4'>
-                  {[
-                    { label: 'Background', value: 'Game Localization' },
-                    { label: 'Focus', value: 'State Architecture' },
-                    { label: 'Approach', value: 'Analytical & Systematic' },
-                    { label: 'Based In', value: 'Japan' },
-                  ].map((fact) => (
+                  {ABOUT_DATA.quickFacts.map((fact) => (
                     <div
                       key={fact.label}
                       className='flex items-start justify-between gap-4'
