@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Globe, Languages, MessageCircle, Code2 } from 'lucide-react';
+import { Code2 } from 'lucide-react';
+import { EXPERIENCE_DATA } from '@/constants/experience';
+import { CONTACT_DATA } from '@/constants/contact';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -8,27 +10,6 @@ const fadeInUp = {
   viewport: { once: true, margin: '-100px' },
   transition: { duration: 0.5 },
 };
-
-const experiences = [
-  {
-    icon: Languages,
-    title: 'Localization Expertise',
-    description:
-      'Years of professional game localization experience, bridging English and Japanese with deep cultural understanding. This background sharpened my eye for detail and user-centric thinking.',
-  },
-  {
-    icon: Globe,
-    title: 'Japan-based Development',
-    description:
-      'Working within the Japanese tech ecosystem provides a unique perspective on quality standards, process-oriented development, and the meticulous craftsmanship valued in the industry.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Cross-cultural Communication',
-    description:
-      'Fluent collaboration across language barriers. Experienced in aligning distributed teams, translating technical concepts for diverse stakeholders, and maintaining clarity in global projects.',
-  },
-];
 
 export function ExperienceSection() {
   return (
@@ -41,37 +22,69 @@ export function ExperienceSection() {
             05 &mdash; Experience
           </span>
           <h2 className='text-3xl font-bold tracking-tight text-foreground md:text-4xl'>
-            Global Experience
+            Professional Experience
           </h2>
         </motion.div>
 
-        <div className='grid gap-6 md:grid-cols-3'>
-          {experiences.map((exp, i) => (
+        <div className='grid gap-6 md:grid-cols-2'>
+          {EXPERIENCE_DATA.map((exp, i) => (
             <motion.div
-              key={exp.title}
+              key={exp.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <Card className='group h-full border-[#ffffff08] bg-[#0f1115] transition-all hover:border-cyan-500/20 glow-border hover:glow-cyan'>
-                <CardContent className='p-6'>
-                  <div className='mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/20 bg-linear-to-br from-cyan-500/10 to-blue-600/10 transition-all group-hover:from-cyan-500/20 group-hover:to-blue-600/20'>
-                    <exp.icon className='h-5 w-5 text-cyan-400' />
+                <CardContent className='p-8'>
+                  <div className='flex flex-col gap-2 mb-6 sm:flex-row sm:items-center sm:justify-between'>
+                    <div>
+                      <h3 className='text-xl font-bold text-foreground group-hover:text-cyan-400 transition-colors'>
+                        {exp.role}
+                      </h3>
+                      <p className='text-sm font-mono text-cyan-400/80 uppercase tracking-wider mt-1'>
+                        {exp.company}
+                      </p>
+                    </div>
+                    <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
+                      {exp.period}
+                    </span>
                   </div>
-                  <h3 className='mb-2 font-semibold text-foreground'>
-                    {exp.title}
-                  </h3>
-                  <p className='text-sm leading-relaxed text-muted-foreground'>
+
+                  <p className='text-sm leading-relaxed text-zinc-400 mb-6'>
                     {exp.description}
                   </p>
+
+                  <ul className='space-y-3 mb-8'>
+                    {exp.achievements.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className='flex items-start gap-3 text-[13px] text-zinc-500'
+                      >
+                        <span className='mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/40' />
+                        <span className='leading-normal'>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {exp.techStack && (
+                    <div className='flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5'>
+                      {exp.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className='rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-zinc-500'
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
 
-        {/* Footer */}
         <motion.div
           {...fadeInUp}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -88,23 +101,22 @@ export function ExperienceSection() {
                   Portfolio
                 </span>
                 <p className='text-xs text-muted-foreground'>
-                  Designing Predictable State and Scalable UI Systems.
+                  Built for Scale & Predictability.
                 </p>
               </div>
             </div>
             <div className='flex items-center gap-6'>
-              <a
-                href='#'
-                className='text-sm text-muted-foreground transition-colors hover:text-cyan-400'
-              >
-                GitHub
-              </a>
-              <a
-                href='#'
-                className='text-sm text-muted-foreground transition-colors hover:text-cyan-400'
-              >
-                LinkedIn
-              </a>
+              {CONTACT_DATA.map((contact) => (
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-sm text-zinc-400 transition-colors hover:text-cyan-400 font-medium'
+                >
+                  {contact.label}
+                </a>
+              ))}
             </div>
           </div>
         </motion.div>
