@@ -1,28 +1,25 @@
 import { HOME_DATA } from '@/constants/home';
 import { motion } from 'framer-motion';
-import {
-  Code2,
-  Cloud,
-  Database,
-  Layers,
-  Monitor,
-  Settings,
-  Globe,
-  Smartphone,
-  Shield,
-} from 'lucide-react';
+import { Layers, Database } from 'lucide-react';
 import { Button } from './ui/button';
+import { FaGithub, FaHtml5, FaReact } from 'react-icons/fa';
+import {
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiVite,
+} from 'react-icons/si';
 
 const techIcons = [
-  { icon: Code2, label: 'Code' },
-  { icon: Cloud, label: 'Cloud' },
-  { icon: Database, label: 'Database' },
-  { icon: Layers, label: 'Layers' },
-  { icon: Monitor, label: 'Monitor' },
-  { icon: Settings, label: 'Settings' },
-  { icon: Globe, label: 'Globe' },
-  { icon: Smartphone, label: 'Mobile' },
-  { icon: Shield, label: 'Security' },
+  { icon: FaHtml5, label: 'HTML' },
+  { icon: SiJavascript, label: 'JavaScript' },
+  { icon: SiTypescript, label: 'TypeScript' },
+  { icon: FaReact, label: 'React' },
+  { icon: SiTailwindcss, label: 'Tailwind' },
+  { icon: SiVite, label: 'Vite' },
+  { icon: FaGithub, label: 'GitHub' },
+  { icon: Layers, label: 'Zustand' },
+  { icon: Database, label: 'TanStack Query' },
 ];
 
 export function HeroSection() {
@@ -86,7 +83,7 @@ export function HeroSection() {
             {HOME_DATA.actions.map((action) => (
               <Button
                 key={action.label}
-                variant={action.variant === 'primary' ? 'default' : 'outline'}
+                variant={action.variant === 'primary' ? 'primary' : 'outline'}
                 size='lg'
                 asChild
               >
