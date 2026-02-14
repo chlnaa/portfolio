@@ -4,11 +4,12 @@ import { cn } from '@/lib/utils';
 import { Code2 } from 'lucide-react';
 
 const navItems = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Project', href: '#project' },
-  { label: 'Architecture', href: '#architecture' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export function Navigation() {
@@ -49,7 +50,6 @@ export function Navigation() {
       )}
     >
       <nav className='mx-auto flex max-w-7xl items-center justify-between px-6 py-4'>
-        {/* Logo - Left */}
         <a href='#home' className='flex items-center gap-2.5'>
           <div className='flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-500/30 bg-linear-to-br from-cyan-500/20 to-blue-600/20'>
             <Code2 className='h-4 w-4 text-cyan-400' />
@@ -57,7 +57,6 @@ export function Navigation() {
           <span className='text-lg font-bold text-foreground'>Portfolio</span>
         </a>
 
-        {/* Nav Links + CTA - Right */}
         <div className='hidden items-center gap-8 md:flex'>
           <ul className='flex items-center gap-1'>
             {navItems.map((item) => (
@@ -67,8 +66,8 @@ export function Navigation() {
                   className={cn(
                     'relative rounded-md px-3 py-2 text-sm font-medium transition-colors',
                     activeSection === item.href.slice(1)
-                      ? 'text-foreground'
-                      : 'text-muted-foreground hover:text-foreground',
+                      ? 'text-cyan-400 border border-cyan-500/30  shadow-lg shadow-cyan-500/20'
+                      : 'text-muted-foreground hover:text-cyan-400',
                   )}
                 >
                   {activeSection === item.href.slice(1) && (
