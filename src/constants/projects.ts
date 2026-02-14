@@ -14,53 +14,54 @@ export const PROJECTS_DATA: ProjectsData = {
     'D3.js',
   ],
   introduction:
-    'A productivity application that integrates task management and focus sessions into a single state model to enhance data traceability.',
+    'A productivity application integrating task management and focus sessions into a unified state-driven architecture.',
 
   overview:
-    'Built a comprehensive productivity tool that helps users track tasks and focus sessions in real-time. The application focuses on data consistency and predictable state management, ensuring that every user interaction is traceable and reliable.',
+    'Designed with explicit state ownership and predictable data flow to ensure UI consistency and long-term maintainability.',
 
   keyFeatures: [
     {
       title: 'Date-Centric Task Management',
       description:
-        'Manage task isolation based on specific dates, utilizing a global selectedDate as the single Source of Truth.',
+        'Uses a global selectedDate as a single source of truth to isolate tasks by date.',
     },
     {
       title: 'Task-Integrated Focus Timer',
       description:
-        'Link tasks with focus time to enable cumulative management of session records.',
+        'Links tasks with focus sessions to accumulate time records per task.',
     },
     {
       title: 'Derived Productivity Dashboard',
       description:
-        'Calculate achievement rates based on existing data without storing additional redundant states.',
+        'Calculates achievement metrics from existing data without introducing redundant state.',
     },
     {
       title: 'Weekly History Visualization',
       description:
-        'Visualize focus patterns based on weekly data modeling using D3.js.',
+        'Visualizes weekly focus patterns using structured data modeling and D3.js.',
     },
   ],
 
   challenges: [
     {
-      problem: 'UI Inconsistency Due to Unclear State Ownership',
+      problem: 'UI inconsistency caused by unclear state ownership.',
       solution:
-        'Redesigned the state flow and standardized the structure so that shared states are modified exclusively through Zustand Store Actions.',
+        'Centralized all shared state mutations through Zustand Store Actions and localized UI-only state within components.',
       result:
-        'Enabled full traceability of state changes and secured 100% UI consistency across components.',
+        'Eliminated inconsistent UI updates and improved traceability of state changes.',
     },
     {
-      problem: 'Stale Closure Issue in Asynchronous Timer',
+      problem: 'Stale closure issue in asynchronous timer logic.',
       solution:
-        'Applied the useInterval hook from usehook-ts (based on useRef) to maintain a reference to the latest callback within the concurrent rendering cycle.',
+        'Resolved a stale closure issue by using the useInterval hook from usehooks-ts, which internally maintains the latest callback reference.',
       result:
-        'Guaranteed accurate timer updates and prevented memory leaks upon component unmount.',
+        'Ensured accurate timer behavior and prevented memory leaks on unmount.',
     },
   ],
 
-  learned:
-    'Gained a deep understanding of explicit state modeling and the importance of separating server state from UI state. Developed the ability to build scalable architectures that are ready for future backend integration while maintaining a high-quality user experience.',
+  learned: ` - Understood how unclear state ownership directly leads to UI inconsistency.
+  - Practiced separating server state and UI state responsibilities.
+  - Improved debugging efficiency through explicit state modeling.`,
 
   links: {
     github: 'https://github.com/your-repo/focusdo',
