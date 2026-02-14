@@ -93,7 +93,64 @@ export function ProjectSection() {
               ))}
             </div>
           </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ duration: 0.5, delay: 0.3 }}>
+            <h3 className='mb-8 font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80'>
+              Challenges & Solutions
+            </h3>
+
+            <div className='grid gap-6 md:grid-cols-2'>
+              {project.challenges.map((challenge, i) => (
+                <Card
+                  key={i}
+                  className='border-[#ffffff08] bg-[#0f1115] overflow-hidden'
+                >
+                  <CardContent className='p-6'>
+                    <div className='grid gap-6 md:grid-cols-2'>
+                      <div>
+                        <span className='text-[10px] font-mono uppercase tracking-widest text-red-400'>
+                          Problem
+                        </span>
+                        <p className='mt-2 text-sm text-muted-foreground'>
+                          {challenge.problem}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span className='text-[10px] font-mono uppercase tracking-widest text-cyan-400'>
+                          Solution
+                        </span>
+                        <p className='mt-2 text-sm text-muted-foreground leading-relaxed'>
+                          {challenge.solution}
+                        </p>
+
+                        <span className='mt-6 block text-[10px] font-mono uppercase tracking-widest text-emerald-400'>
+                          Result
+                        </span>
+                        <p className='mt-2 text-sm text-foreground'>
+                          {challenge.result}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </motion.div>
         </div>
+
+        <motion.div {...fadeInUp} transition={{ duration: 0.5, delay: 0.4 }}>
+          <h3 className='my-6 font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80'>
+            What I Learned
+          </h3>
+          <Card className='border-[#ffffff08] bg-[#0f1115] '>
+            <CardContent className='p-6'>
+              <pre className='text-sm text-muted-foreground whitespace-pre-wrap font-sans leading-relaxed'>
+                {project.learned}
+              </pre>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );
