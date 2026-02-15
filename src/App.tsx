@@ -1,5 +1,6 @@
 import { AboutSection } from './components/AboutSection';
 import { ArchitectureSection } from './components/ArchitectureSection';
+import { ContactSection } from './components/ContactSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { HeroSection } from './components/HeroSection';
 import { Navigation } from './components/Navigation';
@@ -17,6 +18,7 @@ function App() {
         <ProjectSection />
         <ArchitectureSection />
         <ExperienceSection />
+        <ContactSection />
       </main>
     </div>
   );
