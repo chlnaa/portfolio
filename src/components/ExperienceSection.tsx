@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code2 } from 'lucide-react';
 import { EXPERIENCE_DATA } from '@/constants/experience';
-import { CONTACT_DATA } from '@/constants/contact';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -84,42 +82,6 @@ export function ExperienceSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          {...fadeInUp}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className='mt-24'
-        >
-          <div className='h-px w-full bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
-          <div className='flex flex-col items-center justify-between gap-4 pt-8 md:flex-row'>
-            <div className='flex items-center gap-2.5'>
-              <div className='flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-500/30 bg-linear-to-br from-cyan-500/20 to-blue-600/20'>
-                <Code2 className='h-3.5 w-3.5 text-cyan-400' />
-              </div>
-              <div>
-                <span className='text-sm font-bold text-foreground'>
-                  Portfolio
-                </span>
-                <p className='text-xs text-muted-foreground'>
-                  Built for Scale & Predictability.
-                </p>
-              </div>
-            </div>
-            <div className='flex items-center gap-6'>
-              {CONTACT_DATA.map((contact) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-sm text-zinc-400 transition-colors hover:text-cyan-400 font-medium'
-                >
-                  {contact.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
