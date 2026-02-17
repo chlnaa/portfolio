@@ -44,6 +44,21 @@ export interface ProjectChallenge {
   result: string;
 }
 
+export interface ProjectPerformance {
+  lighthouse: {
+    performance: number;
+    accessibility: number;
+    bestPractices: number;
+    seo?: number;
+  };
+  metrics: {
+    fcp: string;
+    lcp: string;
+    tbt: string;
+    cls: string;
+    speedIndex: string;
+  };
+}
 export interface ProjectsData {
   id: string;
   title: string;
@@ -62,6 +77,7 @@ export interface ProjectsData {
     github: string;
     demo: string;
   };
+  performance: ProjectPerformance;
 }
 
 export interface TroubleshootingCase {
