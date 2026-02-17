@@ -21,9 +21,9 @@ export const PROJECTS_DATA: ProjectsData = {
 
   keyFeatures: [
     {
-      title: 'Date-Centric Task Management',
+      title: 'Date-Centric State Isolation',
       description:
-        'Uses a global selectedDate as a single source of truth to isolate tasks by date.',
+        'Implemented selectedDate as a single source of truth to guarantee deterministic task rendering and prevent cross-date state contamination.',
     },
     {
       title: 'Task-Integrated Focus Timer',
@@ -44,11 +44,12 @@ export const PROJECTS_DATA: ProjectsData = {
 
   challenges: [
     {
-      problem: 'UI inconsistency caused by unclear state ownership.',
+      problem:
+        'UI inconsistencies caused by unclear state ownership across components.',
       solution:
-        'Centralized all shared state mutations through Zustand Store Actions and localized UI-only state within components.',
+        'Redefined state boundaries by centralizing shared mutations in Zustand store actions while isolating UI-only state within components.',
       result:
-        'Eliminated inconsistent UI updates and improved traceability of state changes.',
+        'Improved predictability of UI rendering and made state changes easier to trace during debugging.',
     },
     {
       problem: 'Stale closure issue in asynchronous timer logic.',
@@ -59,12 +60,27 @@ export const PROJECTS_DATA: ProjectsData = {
     },
   ],
 
-  learned: ` - Understood how unclear state ownership directly leads to UI inconsistency.
-  - Practiced separating server state and UI state responsibilities.
-  - Improved debugging efficiency through explicit state modeling.`,
-
+  learned: `
+  Understood how unclear state ownership directly leads to UI inconsistency. 
+  Practiced separating server state and UI state responsibilities.
+  Improved debugging efficiency through explicit state modeling.
+  `,
   links: {
     github: 'https://github.com/your-repo/focusdo',
     demo: 'https://focusdo-demo.com',
+  },
+  performance: {
+    lighthouse: {
+      performance: 100,
+      accessibility: 92,
+      bestPractices: 100,
+    },
+    metrics: {
+      fcp: '0.4 s',
+      lcp: '0.4 s',
+      tbt: '0 ms',
+      cls: '0.003',
+      speedIndex: '0.5 s',
+    },
   },
 };
