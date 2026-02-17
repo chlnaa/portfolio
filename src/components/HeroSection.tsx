@@ -1,25 +1,27 @@
 import { HOME_DATA } from '@/constants/home';
 import { motion } from 'framer-motion';
-import { Layers, Database } from 'lucide-react';
 import { Button } from './ui/button';
-import { FaGithub, FaHtml5, FaReact } from 'react-icons/fa';
+import { FaGithub, FaReact } from 'react-icons/fa';
 import {
   SiTailwindcss,
   SiJavascript,
   SiTypescript,
   SiVite,
+  SiD3Dotjs,
+  SiReactquery,
 } from 'react-icons/si';
+import { RiBearSmileFill } from 'react-icons/ri';
 
 const techIcons = [
-  { icon: FaHtml5, label: 'HTML' },
-  { icon: SiJavascript, label: 'JavaScript' },
-  { icon: SiTypescript, label: 'TypeScript' },
   { icon: FaReact, label: 'React' },
-  { icon: SiTailwindcss, label: 'Tailwind' },
+  { icon: SiTypescript, label: 'TypeScript' },
+  { icon: SiJavascript, label: 'JavaScript' },
+  { icon: SiReactquery, label: 'Tanstack Query' },
+  { icon: RiBearSmileFill, label: 'Zustand' },
+  { icon: SiD3Dotjs, label: 'D3' },
   { icon: SiVite, label: 'Vite' },
-  { icon: FaGithub, label: 'GitHub' },
-  { icon: Layers, label: 'Zustand' },
-  { icon: Database, label: 'TanStack Query' },
+  { icon: SiTailwindcss, label: 'Tailwind' },
+  { icon: FaGithub, label: 'Git/GitHub' },
 ];
 
 export function HeroSection() {
@@ -106,9 +108,9 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.08 }}
-                className='group relative flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#ffffff08] bg-[#0f1115]/80 backdrop-blur-sm transition-all hover:border-cyan-500/30 hover:bg-[#0f1115] glow-border'
+                className='group relative flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#ffffff08] bg-[#0f1115]/80 backdrop-blur-sm'
               >
-                <tech.icon className='h-6 w-6 text-cyan-400/70 transition-colors group-hover:text-cyan-400' />
+                <tech.icon className='h-6 w-6 text-cyan-400/70' />
               </motion.div>
             ))}
           </div>
