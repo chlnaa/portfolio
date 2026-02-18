@@ -13,9 +13,9 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection />
         <ProjectSection />
-        <ExperienceSection />
         <ContactSection />
       </main>
     </div>

@@ -106,6 +106,8 @@ export interface ExperienceItem {
   description: string;
   techStack?: string[];
   achievements: string[];
+  isPrimary?: boolean;
+  isCondensed?: boolean;
 }
 
 export interface ContactLink {
