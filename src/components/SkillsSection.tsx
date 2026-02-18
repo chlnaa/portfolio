@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { SKILLS_DATA } from '@/constants/skills';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.5 },
-};
+import { SectionHeader } from './header/SectionHeader';
 
 export function SkillsSection() {
   return (
@@ -15,15 +9,7 @@ export function SkillsSection() {
       <div className='absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
 
       <div className='mx-auto max-w-7xl'>
-        {/* 섹션 헤더 */}
-        <motion.div {...fadeInUp} className='mb-16'>
-          <span className='mb-3 block font-mono text-sm text-cyan-400'>
-            02 &mdash; Skills
-          </span>
-          <h2 className='text-3xl font-bold tracking-tight text-foreground md:text-4xl'>
-            Technical Expertise
-          </h2>
-        </motion.div>
+        <SectionHeader eyebrow='Skills' title=' Technical Expertise' />
 
         <div className='grid gap-8 lg:grid-cols-2'>
           {SKILLS_DATA.map((category, i) => (
