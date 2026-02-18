@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
 import { EXPERIENCE_DATA } from '@/constants/experience';
 import { SectionHeader } from './header/SectionHeader';
+import CondensedExperienceCard from './experience/CondensedExperienceCard';
+import FullExperienceCard from './experience/FullExperienceCard';
 
 export function ExperienceSection() {
   return (
@@ -11,7 +12,7 @@ export function ExperienceSection() {
       <div className='mx-auto max-w-7xl'>
         <SectionHeader eyebrow='Experience' title='Professional Experience' />
 
-        <div className='grid gap-6 md:grid-cols-2'>
+        <div className='flex flex-col gap-10'>
           {EXPERIENCE_DATA.map((exp, i) => (
             <motion.div
               key={exp.id}
@@ -20,52 +21,11 @@ export function ExperienceSection() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className='group h-full border-[#ffffff08] bg-[#0f1115] transition-all hover:border-cyan-500/20 glow-border hover:glow-cyan'>
-                <CardContent className='p-8'>
-                  <div className='flex flex-col gap-2 mb-6 sm:flex-row sm:items-center sm:justify-between'>
-                    <div>
-                      <h3 className='text-xl font-bold text-foreground group-hover:text-cyan-400 transition-colors'>
-                        {exp.role}
-                      </h3>
-                      <p className='text-sm font-mono text-cyan-400/80 uppercase tracking-wider mt-1'>
-                        {exp.company}
-                      </p>
-                    </div>
-                    <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
-                      {exp.period}
-                    </span>
-                  </div>
-
-                  <p className='text-sm leading-relaxed text-zinc-400 mb-6'>
-                    {exp.description}
-                  </p>
-
-                  <ul className='space-y-3 mb-8'>
-                    {exp.achievements.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className='flex items-start gap-3 text-[13px] text-zinc-500'
-                      >
-                        <span className='mt-1.5 h-1 w-1 shrink-0 rounded-full bg-cyan-500/40' />
-                        <span className='leading-normal'>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {exp.techStack && (
-                    <div className='flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5'>
-                      {exp.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className='rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-zinc-500'
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+              {exp.isCondensed ? (
+                <CondensedExperienceCard exp={exp} />
+              ) : (
+                <FullExperienceCard exp={exp} />
+              )}
             </motion.div>
           ))}
         </div>
