@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { EXPERIENCE_DATA } from '@/constants/experience';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.5 },
-};
+import { SectionHeader } from './header/SectionHeader';
 
 export function ExperienceSection() {
   return (
@@ -15,14 +9,7 @@ export function ExperienceSection() {
       <div className='absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
 
       <div className='mx-auto max-w-7xl'>
-        <motion.div {...fadeInUp} className='mb-16'>
-          <span className='mb-3 block font-mono text-sm text-cyan-400'>
-            05 &mdash; Experience
-          </span>
-          <h2 className='text-3xl font-bold tracking-tight text-foreground md:text-4xl'>
-            Professional Experience
-          </h2>
-        </motion.div>
+        <SectionHeader eyebrow='Experience' title='Professional Experience' />
 
         <div className='grid gap-6 md:grid-cols-2'>
           {EXPERIENCE_DATA.map((exp, i) => (
