@@ -8,11 +8,11 @@ interface ProjectHeroProps {
 
 export function ProjectHero({ project }: ProjectHeroProps) {
   return (
-    <Card className='border-[#ffffff08] bg-[#0f1115] glow-border shadow-lg shadow-cyan-500/20'>
+    <Card className='border-[#ffffff08] bg-[#0f1115] glow-border shadow-lg shadow-cyan-500/20 select-none'>
       <CardContent className='p-7 space-y-5'>
         <div className='flex flex-wrap items-center gap-4'>
           <h3 className='text-4xl font-bold'>{project.title}</h3>
-          <Badge className='border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm text-muted-foreground'>
+          <Badge className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
             {project.period}
           </Badge>
         </div>

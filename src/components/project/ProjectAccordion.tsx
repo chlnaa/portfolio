@@ -16,9 +16,9 @@ interface ProjectAccordionProps {
 
 export function ProjectAccordion({ project }: ProjectAccordionProps) {
   return (
-    <Accordion type='single' collapsible className='w-full'>
+    <Accordion type='single' collapsible className='w-full select-none'>
       <AccordionItem value='architecture' className='border-cyan-500/20'>
-        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-muted-foreground hover:no-underline hover:text-cyan-400'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           Architecture & Performance
         </AccordionTrigger>
         <AccordionContent>
@@ -27,7 +27,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
       </AccordionItem>
 
       <AccordionItem value='features' className='border-cyan-500/20'>
-        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-muted-foreground hover:no-underline hover:text-cyan-400'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           Key Technical Features
         </AccordionTrigger>
         <AccordionContent>
@@ -36,7 +36,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
       </AccordionItem>
 
       <AccordionItem value='challenges' className='border-cyan-500/20'>
-        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-muted-foreground hover:no-underline hover:text-cyan-400'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           Challenges & Solutions
         </AccordionTrigger>
         <AccordionContent>
@@ -45,7 +45,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
       </AccordionItem>
 
       <AccordionItem value='lessons'>
-        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-muted-foreground hover:no-underline hover:text-cyan-400'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80  hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           What I Learned
         </AccordionTrigger>
         <AccordionContent>
