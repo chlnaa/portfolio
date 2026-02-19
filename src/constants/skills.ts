@@ -2,30 +2,31 @@ import type { SkillCategory } from '@/types/portfolio';
 
 export const SKILLS_DATA: SkillCategory[] = [
   {
-    category: 'Frontend',
+    category: 'Frontend  Engineering',
     items: [
       {
         name: 'React',
         details: [
-          'Hook-based component design',
-          'Minimizing re-render scope',
-          'SPA architecture design',
+          'Designing reusable components using a hook-based architecture',
+          'Controlling rendering scope to maintain predictable UI performance',
+          'Structuring SPA applications with clear separation of concerns',
+          'Hook-based component design Component-level styling with Tailwind CSS',
         ],
       },
       {
         name: 'TypeScript',
         details: [
-          'Interface-driven data contract design',
-          'Explicit state modeling',
-          'Strict type safety',
+          'Designing interface driven data contracts between components',
+          'Explicit state modeling to prevent ambiguous UI states',
+          'Maintaining strict type safety across medium-scale codebases',
         ],
       },
       {
         name: 'State Management',
         details: [
-          'TanStack Query (Server State)',
-          'Zustand (UI State)',
-          'Responsibility separation',
+          'Server state handling using TanStack Query',
+          'Lightweight UI state management with Zustand',
+          'Clear separation between server data and client side interaction state',
         ],
       },
     ],
@@ -37,9 +38,9 @@ export const SKILLS_DATA: SkillCategory[] = [
       {
         name: 'Workflow & Strategy',
         details: [
-          'Branching strategy based on Git Flow',
-          'Consistent adherence to English commit conventions',
-          'Experience in structuring READMEs and handover documentation',
+          'Applying Git Flow based branching strategies',
+          'Maintaining consistent English commit conventions',
+          'Structuring technical documentation and handover materials',
         ],
       },
       {
@@ -47,7 +48,7 @@ export const SKILLS_DATA: SkillCategory[] = [
         details: [
           'Build setup and optimization using Vite',
           'Maintaining code consistency with ESLint and Prettier',
-          'Standardizing development workflows for team collaboration',
+          'Following structured development workflows in team environments',
         ],
       },
     ],
