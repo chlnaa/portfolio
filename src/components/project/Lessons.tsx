@@ -1,11 +1,19 @@
 interface LessonsProps {
-  learned: string;
+  learned: string[];
 }
 
 export function Lessons({ learned }: LessonsProps) {
   return (
-    <p className='text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap'>
-      {learned}
-    </p>
+    <ul className='space-y-2'>
+      {learned.map((item, index) => (
+        <li
+          key={index}
+          className='text-sm text-muted-foreground leading-relaxed flex gap-2'
+        >
+          <span className='shrink-0'>•</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }

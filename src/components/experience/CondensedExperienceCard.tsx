@@ -6,12 +6,17 @@ import {
   AccordionTrigger,
 } from '../ui/accordion';
 import { Card, CardContent } from '../ui/card';
+import type { Language } from '@/context/LanguageProvider';
 
 interface CondensedProps {
   exp: ExperienceItem;
+  language: Language;
 }
 
-export default function CondensedExperienceCard({ exp }: CondensedProps) {
+export default function CondensedExperienceCard({
+  exp,
+  language,
+}: CondensedProps) {
   return (
     <Card className='border-[#ffffff10] bg-[#0f1115] transition hover:border-cyan-500/30 hover:bg-[#131720] hover:[&_svg]:text-cyan-500/70 select-none'>
       <CardContent className='p-8'>
@@ -21,10 +26,10 @@ export default function CondensedExperienceCard({ exp }: CondensedProps) {
               <div className='flex w-full items-center justify-between text-left'>
                 <div>
                   <h3 className='text-lg font-semibold tracking-tight'>
-                    {exp.role}
+                    {exp.role[language]}
                   </h3>
                   <p className='text-xs font-mono text-muted-foreground mt-1'>
-                    {exp.company}
+                    {exp.company[language]}
                   </p>
                 </div>
 
@@ -36,7 +41,7 @@ export default function CondensedExperienceCard({ exp }: CondensedProps) {
 
             <AccordionContent className='pt-6 space-y-6'>
               <p className='text-sm text-zinc-400 leading-relaxed'>
-                {exp.description}
+                {exp.description[language]}
               </p>
 
               <ul className='space-y-3'>
@@ -46,7 +51,7 @@ export default function CondensedExperienceCard({ exp }: CondensedProps) {
                     className='flex gap-3 text-sm text-zinc-500 leading-relaxed'
                   >
                     <span className='mt-2 h-1.5 w-1.5 rounded-full bg-cyan-500/60 shrink-0' />
-                    <span>{item}</span>
+                    <span>{item[language]}</span>
                   </li>
                 ))}
               </ul>

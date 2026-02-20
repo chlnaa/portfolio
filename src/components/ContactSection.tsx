@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowUpRight } from 'lucide-react';
-import { CONTACT_DATA } from '@/constants/contact';
 import { SectionHeader } from './header/SectionHeader';
 import { fadeInUp } from '@/lib/animations';
+import { CONTACT_CONTENT } from '@/constants/contactContent';
+import { CONTACT_LINKS } from '@/constants/contactLink';
+import { useLanguage } from '@/context/LanguageProvider';
 
 export function ContactSection() {
+  const { language } = useLanguage();
+  const content = CONTACT_CONTENT;
+  const links = CONTACT_LINKS;
+
   return (
     <section id='contact' className='relative px-6 py-24 md:py-32'>
       <div className='absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
@@ -15,15 +21,9 @@ export function ContactSection() {
 
         <motion.div {...fadeInUp} className='mb-8'>
           <div className='leading-relaxed text-muted-foreground'>
-            I am a frontend developer dedicated to building clean, maintainable
-            user interfaces.
-            <br />
-            Backed by prior professional experience, I value clear communication
-            and responsible collaboration.
-            <br />
-            I am currently looking for frontend opportunities and would be glad
-            to connect.
-            <br />I typically respond within 24 hours.
+            {content.description.map((line, idx) => (
+              <p key={idx}>{line[language]}</p>
+            ))}
           </div>
         </motion.div>
 
@@ -34,7 +34,7 @@ export function ContactSection() {
         >
           <div className='grid gap-8 md:grid-cols-2'>
             <div className='flex flex-col gap-3'>
-              {CONTACT_DATA.map((item) => {
+              {links.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Card
@@ -85,18 +85,17 @@ export function ContactSection() {
               className='flex flex-col items-baseline rounded-lg border border-[#ffffff10] bg-[#0f1115] p-8 shadow-lg shadow-cyan-500/20 '
             >
               <h3 className='font-mono text-sm font-medium text-cyan-400'>
-                Open to Work
+                {content.openToWork.badge[language]}
               </h3>
 
               <p className='mt-4 text-lg font-semibold text-foreground'>
-                Currently looking for frontend developer positions.
+                {content.openToWork.headline[language]}
               </p>
 
               <p className='mt-4 leading-relaxed text-left text-muted-foreground'>
-                I am interested in full-time roles where I can contribute to
-                meaningful products, collaborate with a team, and continue
-                growing as an engineer. <br /> Remote and on-site opportunities
-                are welcome.
+                {content.openToWork.description.map((line, idx) => (
+                  <p key={idx}>{line[language]}</p>
+                ))}
               </p>
 
               <div className='mt-6 flex items-center gap-2'>
@@ -105,7 +104,7 @@ export function ContactSection() {
                   <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500' />
                 </span>
                 <span className='text-sm text-muted-foreground'>
-                  Available for hire
+                  {content.openToWork.availability}
                 </span>
               </div>
             </motion.div>

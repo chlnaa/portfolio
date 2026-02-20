@@ -1,12 +1,14 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { ProjectsData } from '@/types/portfolio';
+import type { Language } from '@/context/LanguageProvider';
 
 interface ProjectHeroProps {
   project: ProjectsData;
+  language: Language;
 }
 
-export function ProjectHero({ project }: ProjectHeroProps) {
+export function ProjectHero({ project, language }: ProjectHeroProps) {
   return (
     <Card className='border-[#ffffff08] bg-[#0f1115] glow-border shadow-lg shadow-cyan-500/20 select-none'>
       <CardContent className='p-7 space-y-5'>
@@ -22,8 +24,12 @@ export function ProjectHero({ project }: ProjectHeroProps) {
         </p>
 
         <div>
-          <p className='text-lg'>{project.introduction}</p>
-          <p className='text-sm text-muted-foreground'>{project.overview}</p>
+          <p className='text-lg whitespace-pre-line '>
+            {project.introduction[language]}
+          </p>
+          <p className='text-sm text-muted-foreground whitespace-pre-line '>
+            {project.overview[language]}
+          </p>
         </div>
 
         <div className='flex flex-wrap gap-2 pt-3'>
