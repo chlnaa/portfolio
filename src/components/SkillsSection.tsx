@@ -2,8 +2,11 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { SKILLS_DATA } from '@/constants/skills';
 import { SectionHeader } from './header/SectionHeader';
+import { useLanguage } from '@/context/LanguageProvider';
 
 export function SkillsSection() {
+  const { language } = useLanguage();
+
   return (
     <section id='skills' className='relative px-6 py-24 md:py-32'>
       <div className='absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-500/20 to-transparent' />
@@ -49,7 +52,7 @@ export function SkillsSection() {
                                 className='flex items-center gap-3 text-sm text-muted-foreground'
                               >
                                 <span className='h-1 w-1 shrink-0 rounded-full bg-cyan-500/40' />
-                                {detail}
+                                {detail[language]}
                               </li>
                             ))}
                           </ul>

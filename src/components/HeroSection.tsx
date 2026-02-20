@@ -11,6 +11,7 @@ import {
   SiReactquery,
 } from 'react-icons/si';
 import { RiBearSmileFill } from 'react-icons/ri';
+import { useLanguage } from '@/context/LanguageProvider';
 
 const techIcons = [
   { icon: FaReact, label: 'React' },
@@ -25,6 +26,8 @@ const techIcons = [
 ];
 
 export function HeroSection() {
+  const { language } = useLanguage();
+
   return (
     <section
       id='home'
@@ -54,7 +57,7 @@ export function HeroSection() {
           >
             <span className='inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm text-cyan-400'>
               <span className='h-1.5 w-1.5 rounded-full bg-cyan-400' />
-              {HOME_DATA.title} <br />
+              {HOME_DATA.title}
             </span>
           </motion.div>
 
@@ -62,18 +65,18 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className='text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl'
+            className='text-balance text-4xl font-bold whitespace-pre-line leading-[1.1] tracking-tight md:text-4xl lg:text-5xl'
           >
-            {HOME_DATA.subtitle}
+            {HOME_DATA.subtitle[language]}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className='mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground md:text-lg'
+            className='mt-6 max-w-lg text-pretty whitespace-pre-line  text-base leading-relaxed text-muted-foreground md:text-lg'
           >
-            {HOME_DATA.description}
+            {HOME_DATA.description[language]}
           </motion.p>
 
           <motion.div

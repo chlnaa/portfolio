@@ -5,9 +5,11 @@ import { ProjectAccordion } from './project/ProjectAccordion';
 import { motion } from 'framer-motion';
 import { SectionHeader } from './header/SectionHeader';
 import { fadeInUp } from '@/lib/animations';
+import { useLanguage } from '@/context/LanguageProvider';
 
 export function ProjectSection() {
   const project: ProjectsData = PROJECTS_DATA;
+  const { language } = useLanguage();
 
   return (
     <section id='project' className='relative px-6 py-24 md:py-32'>
@@ -18,8 +20,8 @@ export function ProjectSection() {
 
         <motion.div {...fadeInUp} className='mb-16'>
           <div className='mx-auto max-w-7xl space-y-16'>
-            <ProjectHero project={project} />
-            <ProjectAccordion project={project} />
+            <ProjectHero project={project} language={language} />
+            <ProjectAccordion project={project} language={language} />
           </div>
         </motion.div>
       </div>

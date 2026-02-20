@@ -9,12 +9,14 @@ import { Challenges } from './Challenges';
 import { Lessons } from './Lessons';
 import type { ProjectsData } from '@/types/portfolio';
 import { Architecture } from './Architecture';
+import type { Language } from '@/context/LanguageProvider';
 
 interface ProjectAccordionProps {
   project: ProjectsData;
+  language: Language;
 }
 
-export function ProjectAccordion({ project }: ProjectAccordionProps) {
+export function ProjectAccordion({ project, language }: ProjectAccordionProps) {
   return (
     <Accordion type='single' collapsible className='w-full select-none'>
       <AccordionItem value='architecture' className='border-cyan-500/20'>
@@ -22,7 +24,11 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
           Architecture & Performance
         </AccordionTrigger>
         <AccordionContent>
-          <Architecture performance={project.performance} />
+          <Architecture
+            performance={project.performance}
+            architecture={project.architecture}
+            language={language}
+          />
         </AccordionContent>
       </AccordionItem>
 
@@ -31,7 +37,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
           Key Technical Features
         </AccordionTrigger>
         <AccordionContent>
-          <KeyFeatures features={project.keyFeatures} />
+          <KeyFeatures features={project.keyFeatures} language={language} />
         </AccordionContent>
       </AccordionItem>
 
@@ -40,7 +46,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
           Challenges & Solutions
         </AccordionTrigger>
         <AccordionContent>
-          <Challenges challenges={project.challenges} />
+          <Challenges challenges={project.challenges} language={language} />
         </AccordionContent>
       </AccordionItem>
 
@@ -49,7 +55,7 @@ export function ProjectAccordion({ project }: ProjectAccordionProps) {
           What I Learned
         </AccordionTrigger>
         <AccordionContent>
-          <Lessons learned={project.learned} />
+          <Lessons learned={project.learned[language]} />
         </AccordionContent>
       </AccordionItem>
     </Accordion>

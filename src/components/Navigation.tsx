@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Code2 } from 'lucide-react';
+import LanguageSwitcher from './header/LanguageSwitcher';
+import { useLanguage } from '@/context/LanguageProvider';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -15,6 +17,7 @@ const navItems = [
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +89,8 @@ export function Navigation() {
               </li>
             ))}
           </ul>
+
+          <LanguageSwitcher current={language} onChange={setLanguage} />
         </div>
       </nav>
     </motion.header>

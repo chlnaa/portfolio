@@ -3,6 +3,18 @@ export interface NavItem {
   href: string;
 }
 
+export interface LocalizedText {
+  en: string;
+  ko: string;
+  ja: string;
+}
+
+export interface LocalizedList {
+  ko: string[];
+  en: string[];
+  ja: string[];
+}
+
 export interface HomeAction {
   label: string;
   href: string;
@@ -11,8 +23,8 @@ export interface HomeAction {
 
 export interface HomeData {
   title: string;
-  subtitle: string;
-  description: string;
+  subtitle: LocalizedText;
+  description: LocalizedText;
   keywords: string[];
   actions: HomeAction[];
 }
@@ -24,13 +36,13 @@ export interface QuickFact {
 
 export interface AboutData {
   title: string;
-  description: string[];
+  description: LocalizedText[];
   quickFacts: QuickFact[];
 }
 
 export interface SkillItem {
   name: string;
-  details: string[];
+  details: LocalizedText[];
 }
 
 export interface SkillCategory {
@@ -38,10 +50,20 @@ export interface SkillCategory {
   items: SkillItem[];
 }
 
+export interface ArchitectureSection {
+  title: LocalizedText;
+  description?: LocalizedText;
+}
+
+export interface ArchitectureData {
+  sections: ArchitectureSection[];
+  footer: LocalizedText;
+}
+
 export interface ProjectChallenge {
-  problem: string;
-  solution: string;
-  result: string;
+  problem: LocalizedText;
+  solution: LocalizedText;
+  result: LocalizedText;
 }
 
 export interface ProjectPerformance {
@@ -59,24 +81,26 @@ export interface ProjectPerformance {
     speedIndex: string;
   };
 }
+
 export interface ProjectsData {
   id: string;
   title: string;
   period: string;
   role: string;
   techStack: string[];
-  introduction: string;
-  overview: string;
+  introduction: LocalizedText;
+  overview: LocalizedText;
   keyFeatures: {
-    title: string;
-    description: string;
+    title: LocalizedText;
+    description: LocalizedText;
   }[];
   challenges: ProjectChallenge[];
-  learned: string;
+  learned: LocalizedList;
   links: {
     github: string;
     demo: string;
   };
+  architecture: ArchitectureData;
   performance: ProjectPerformance;
 }
 
@@ -101,13 +125,23 @@ export interface GlobalExperience {
 export interface ExperienceItem {
   id: number;
   period: string;
-  role: string;
-  company: string;
-  description: string;
+  role: LocalizedText;
+  company: LocalizedText;
+  description: LocalizedText;
   techStack?: string[];
-  achievements: string[];
+  achievements: LocalizedText[];
   isPrimary?: boolean;
   isCondensed?: boolean;
+}
+
+export interface ContactContent {
+  description: LocalizedText[];
+  openToWork: {
+    badge: LocalizedText;
+    headline: LocalizedText;
+    description: LocalizedText[];
+    availability: string;
+  };
 }
 
 export interface ContactLink {
