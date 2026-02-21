@@ -20,7 +20,7 @@ export const HOME_DATA: HomeData = {
     'TanStack Query',
   ],
   actions: [
-    { label: 'View Projects', href: '#projects', variant: 'primary' },
+    { label: 'View Project', href: '#project', variant: 'primary' },
     { label: 'Contact Me', href: '#contact', variant: 'secondary' },
   ],
 };
