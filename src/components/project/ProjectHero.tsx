@@ -13,21 +13,21 @@ export function ProjectHero({ project, language }: ProjectHeroProps) {
     <Card className='border-[#ffffff08] bg-[#0f1115] glow-border shadow-lg shadow-cyan-500/20 select-none'>
       <CardContent className='p-7 space-y-5'>
         <div className='flex flex-wrap items-center gap-4'>
-          <h3 className='text-4xl font-bold'>{project.title}</h3>
-          <Badge className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
+          <h3 className='text-2xl font-bold md:text-4xl'>{project.title}</h3>
+          <Badge className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-muted-foreground border border-white/5'>
             {project.period}
           </Badge>
         </div>
 
-        <p className='font-mono text-cyan-400/80 text-sm uppercase'>
+        <p className='font-mono text-cyan-400/80 text-xs md:text-sm uppercase'>
           {project.role}
         </p>
 
         <div>
-          <p className='text-lg whitespace-pre-line '>
+          <p className='text-sm md:text-lg whitespace-pre-line '>
             {project.introduction[language]}
           </p>
-          <p className='text-sm text-muted-foreground whitespace-pre-line '>
+          <p className='text-xs md:text-sm text-muted-foreground pt-2 whitespace-pre-line '>
             {project.overview[language]}
           </p>
         </div>
@@ -37,7 +37,7 @@ export function ProjectHero({ project, language }: ProjectHeroProps) {
             <Badge
               key={tech}
               variant='outline'
-              className='text-sm border-cyan-500/20 bg-cyan-500/5 text-cyan-400'
+              className='text-xs md:text-sm border-cyan-500/20 bg-cyan-500/5 text-cyan-400'
             >
               {tech}
             </Badge>

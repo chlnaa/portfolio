@@ -32,7 +32,7 @@ export function Architecture({
 
           {index === 2 && (
             <>
-              <div className='mt-4 grid md:grid-cols-3 gap-4'>
+              <div className='mt-4 grid grid-cols-2 md:grid-cols-3 gap-4'>
                 <PerformanceCard
                   label='Performance'
                   value={lighthouse.performance.toString()}
@@ -47,7 +47,7 @@ export function Architecture({
                 />
               </div>
 
-              <div className='mt-6 grid md:grid-cols-3 gap-4'>
+              <div className='mt-6 grid grid-cols-2 md:grid-cols-3 gap-4'>
                 <PerformanceCard label='FCP' value={metrics.fcp} />
                 <PerformanceCard label='LCP' value={metrics.lcp} />
                 <PerformanceCard label='TBT' value={metrics.tbt} />
