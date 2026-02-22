@@ -17,16 +17,16 @@ export default function FullExperienceCard({
         <div className='absolute left-0 top-0 h-full w-[2px] bg-cyan-500/40' />
       )}
       <CardContent className='p-10'>
-        <div className='flex items-start justify-between mb-6'>
+        <div className='flex flex-col md:flex-row gap-3 items-start justify-between mb-6'>
           <div>
-            <h3 className='text-2xl font-semibold tracking-tight'>
+            <h3 className='text-lg pb-2 md:pb-0 md:text-xl font-semibold tracking-tight'>
               {exp.role[language]}
             </h3>
-            <p className='text-xs font-mono text-muted-foreground uppercase tracking-wider mt-1'>
+            <p className='text-xs md:text-sm font-mono text-muted-foreground uppercase tracking-wider mt-1'>
               {exp.company[language]}
             </p>
           </div>
-          <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
+          <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-muted-foreground border border-white/5'>
             {exp.period}
           </span>
         </div>

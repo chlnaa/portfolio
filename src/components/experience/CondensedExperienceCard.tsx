@@ -23,9 +23,9 @@ export default function CondensedExperienceCard({
         <Accordion type='single' collapsible>
           <AccordionItem value={String(exp.id)} className='border-none'>
             <AccordionTrigger className='p-0 hover:no-underline'>
-              <div className='flex w-full items-center justify-between text-left'>
+              <div className='flex w-full flex-col md:flex-row justify-between md:items-center gap-2 text-left'>
                 <div>
-                  <h3 className='text-lg font-semibold tracking-tight'>
+                  <h3 className='text-lg md:text-xl font-semibold tracking-tight'>
                     {exp.role[language]}
                   </h3>
                   <p className='text-xs font-mono text-muted-foreground mt-1'>
@@ -33,7 +33,7 @@ export default function CondensedExperienceCard({
                   </p>
                 </div>
 
-                <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-muted-foreground border border-white/5'>
+                <span className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-muted-foreground border border-white/5'>
                   {exp.period}
                 </span>
               </div>
