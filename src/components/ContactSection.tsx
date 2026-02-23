@@ -55,7 +55,7 @@ export function ContactSection() {
                         className='group flex items-center justify-between'
                       >
                         <div className='flex items-center gap-4'>
-                          <div className='flex h-10 w-10 items-center justify-center rounded-md bg-[#ffffff05]'>
+                          <div className='flex h-10 w-10 items-center justify-center rounded-md border-cyan-400/50 bg-cyan-500/15 '>
                             {Icon && (
                               <Icon className='h-5 w-5 text-foreground' />
                             )}
