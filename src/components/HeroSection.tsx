@@ -44,8 +44,8 @@ export function HeroSection() {
         />
       </div>
 
-      <div className='absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-cyan-500/5 blur-[120px]' />
-      <div className='absolute -left-20 top-1/2 h-[400px] w-[400px] rounded-full bg-blue-600/5 blur-[100px]' />
+      <div className='absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-cyan-600/10 blur-[120px]' />
+      <div className='absolute -left-20 top-1/2 h-[400px] w-[400px] rounded-full bg-cyan-600/15 blur-[100px]' />
 
       <div className='relative mx-auto flex w-full max-w-7xl items-center justify-between gap-12'>
         <div className='flex  max-w-xl flex-col justify-center'>
@@ -111,9 +111,22 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.08 }}
-                className='group relative flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#ffffff08] bg-[#0f1115]/80 backdrop-blur-sm'
+                className='group relative z-10 flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-500/15 backdrop-blur-sm'
               >
-                <tech.icon className='h-6 w-6 text-cyan-400/70' />
+                <motion.span
+                  className='absolute -inset-3 -z-10 rounded-xl  bg-cyan-400/60 blur-2xl'
+                  animate={{
+                    opacity: [0.2, 0.5, 0.2],
+                    scale: [1, 1.15, 1],
+                  }}
+                  transition={{
+                    duration: 4 + i * 0.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: i * 0.3,
+                  }}
+                />
+                <tech.icon className='relative z-10 h-6 w-6 text-cyan-400' />
               </motion.div>
             ))}
           </div>
