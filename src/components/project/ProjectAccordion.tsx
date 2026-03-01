@@ -18,7 +18,7 @@ interface ProjectAccordionProps {
 
 export function ProjectAccordion({ project, language }: ProjectAccordionProps) {
   return (
-    <Accordion type='single' collapsible className='w-full select-none'>
+    <Accordion type='single' collapsible defaultValue='architecture' className='w-full select-none'>
       <AccordionItem value='architecture' className='border-cyan-500/20'>
         <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           Architecture & Performance
