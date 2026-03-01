@@ -51,7 +51,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 2,
     period: '2019.04 - 2023.09',
     role: {
-      ko: '로컬라이징 QA 및 프로젝트 담당 (파견사원)',
+      ko: '로컬라이징 QA 및 프로젝트 담당 (파견)',
       en: 'Localization QA & Project Specialist (Contractor)',
       ja: 'ローカライズQAおよびプロジェクト担当 (派遣)',
     },
@@ -92,7 +92,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 3,
     period: '2018.07 - 2019.04',
     role: {
-      ko: '행정 지원 (파견사원)',
+      ko: '행정 지원 (파견)',
       en: 'Administrative Coordinator (Contractor)',
       ja: '行政サポート (派遣)',
     },
@@ -124,9 +124,9 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 4,
     period: '2016.09 - 2018.02',
     role: {
-      ko: '플랫폼 운영 서포트 (파견사원)',
+      ko: '플랫폼 운영 서포트 (계약사원)',
       en: 'Platform Operations Assistant (Contractor)',
-      ja: 'プラットフォーム運営サポート (派遣)',
+      ja: 'プラットフォーム運営サポート (契約)',
     },
     company: {
       ko: '이러닝 플랫폼 사업부',
