@@ -1,7 +1,7 @@
 import { HOME_DATA } from '@/constants/home';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
-import { FaGithub, FaReact } from 'react-icons/fa';
+import { FaGithub, FaReact, FaFigma } from 'react-icons/fa';
 import {
   SiTailwindcss,
   SiJavascript,
@@ -9,6 +9,8 @@ import {
   SiVite,
   SiD3Dotjs,
   SiReactquery,
+  SiSupabase,
+  SiShadcnui,
 } from 'react-icons/si';
 import { RiBearSmileFill } from 'react-icons/ri';
 import { useLanguage } from '@/context/LanguageProvider';
@@ -17,11 +19,14 @@ const techIcons = [
   { icon: FaReact, label: 'React' },
   { icon: SiTypescript, label: 'TypeScript' },
   { icon: SiJavascript, label: 'JavaScript' },
+  { icon: SiVite, label: 'Vite' },
   { icon: SiReactquery, label: 'Tanstack Query' },
   { icon: RiBearSmileFill, label: 'Zustand' },
-  { icon: SiD3Dotjs, label: 'D3' },
-  { icon: SiVite, label: 'Vite' },
-  { icon: SiTailwindcss, label: 'Tailwind' },
+  { icon: SiSupabase, label: 'Supabase' },
+  { icon: SiD3Dotjs, label: 'D3.js' },
+  { icon: SiTailwindcss, label: 'Tailwind CSS' },
+  { icon: SiShadcnui, label: 'Shadcn UI' },
+  { icon: FaFigma, label: 'Figma' },
   { icon: FaGithub, label: 'Git/GitHub' },
 ];
 
@@ -104,17 +109,17 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className='relative hidden items-center justify-center lg:flex'
         >
-          <div className='relative grid grid-cols-3 gap-5'>
+          <div className='relative grid grid-cols-4 gap-5'>
             {techIcons.map((tech, i) => (
               <motion.div
                 key={tech.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.08 }}
-                className='group relative z-10 flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-500/15 backdrop-blur-sm'
+                className='group relative z-10 flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-500/5 backdrop-blur-sm'
               >
                 <motion.span
-                  className='absolute -inset-3 -z-10 rounded-xl  bg-cyan-400/60 blur-2xl'
+                  className='absolute -inset-3 -z-10 rounded-xl bg-cyan-400/60 blur-2xl'
                   animate={{
                     opacity: [0.2, 0.5, 0.2],
                     scale: [1, 1.15, 1],
@@ -126,7 +131,10 @@ export function HeroSection() {
                     delay: i * 0.3,
                   }}
                 />
-                <tech.icon className='relative z-10 h-6 w-6 text-cyan-400' />
+                <tech.icon className='relative z-10 h-6 w-6 text-cyan-400 transition-transform duration-300 group-hover:scale-125' />
+                <span className='absolute bottom-3 text-[10px] font-medium text-cyan-100 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'>
+                  {tech.label}
+                </span>
               </motion.div>
             ))}
           </div>
