@@ -57,7 +57,6 @@ export interface ArchitectureSection {
 
 export interface ArchitectureData {
   sections: ArchitectureSection[];
-  footer: LocalizedText;
 }
 
 export interface ProjectChallenge {
@@ -80,6 +79,7 @@ export interface ProjectPerformance {
     cls: string;
     speedIndex: string;
   };
+  footer: LocalizedText;
 }
 
 export interface ProjectsData {

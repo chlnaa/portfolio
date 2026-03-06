@@ -164,13 +164,12 @@ export const PROJECTS_DATA: ProjectsData = {
       {
         title: {
           ko: '데이터 흐름 아키텍처',
-          en: 'System Data Flow Architecture',
+          en: 'Unidirectional Data Flow',
           ja: 'システムデータフローアーキテクチャ',
         },
         description: {
           ko: `애플리케이션의 데이터 흐름을 단방향 구조로 설계하여 예측 가능한 상태 전이를 보장했습니다.
-      Client → React Query → Supabase API → PostgreSQL → focus_sessions(SSOT) → Client Aggregation 구조를 통해 
-      데이터의 단일 출처와 통계 파생 로직을 명확히 분리했습니다.`,
+      Client → React Query → Supabase API → PostgreSQL → focus_sessions(SSOT) → Client Aggregation 구조를 통해 데이터의 단일 출처와 통계 파생 로직을 명확히 분리했습니다.`,
           en: `Designed the application with a unidirectional data flow to ensure predictable state transitions.
       The data pipeline follows: Client → React Query → Supabase API → PostgreSQL → focus_sessions (SSOT) → Client-side Aggregation, clearly separating the source data from derived statistics.`,
           ja: `アプリケーションのデータフローを単方向構造で設計し、予測可能な状態遷移を保証しました。
@@ -184,8 +183,10 @@ export const PROJECTS_DATA: ProjectsData = {
           ja: 'データ整合性および集約戦略',
         },
         description: {
-          ko: `데이터 불일치를 방지하기 위해 focus_sessions를 단일 진실 공급원(SSOT)으로 정의하는 데이터 모델링을 수행했습니다.
-          가공된 상태값(Derived Data)을 DB에 저장하지 않고 React Query 기반 클라이언트 집계를 통해 실시간 통계 파이프라인을 구축했습니다.`,
+          ko: `데이터 불일치를 방지하기 위해 focus_sessions를 단일 진실 공급원(SSOT)으로 정의하는 
+               데이터 모델링을 수행했습니다.
+          가공된 상태값(Derived Data)을 DB에 저장하지 않고 React Query 기반 클라이언트 집계를 통해 
+          실시간 통계 파이프라인을 구축했습니다.`,
           en: `Defined focus_sessions as the Single Source of Truth (SSOT) to prevent data inconsistencies.
           Instead of storing derived data in the database, a deterministic aggregation pipeline was implemented using React Query to compute statistics in real time.`,
           ja: `データ不整合を防止するため、focus_sessionsを単一真実のソース(SSOT)として定義するデータモデリングを実施しました。
@@ -220,7 +221,8 @@ export const PROJECTS_DATA: ProjectsData = {
         },
         description: {
           ko: `React Query를 도입하여 서버 상태와 클라이언트 UI 상태를 엄격히 분리했습니다.
-               Supabase(PostgreSQL) 기반의 영속성 계층을 구축하고, 계층적 쿼리 키(Query Keys) 전략을 통해 
+               Supabase(PostgreSQL) 기반의 영속성 계층을 구축하고, 
+               계층적 쿼리 키(Query Keys) 전략을 통해 
                효율적인 캐시 무효화(Invalidation)와 데이터 동기화를 구현했습니다.`,
           en: `Adopted React Query to clearly separate server state from client UI state.
                Implemented a data layer based on Supabase (PostgreSQL) and designed hierarchical Query Keys to support efficient cache invalidation and data synchronization.`,
@@ -228,32 +230,7 @@ export const PROJECTS_DATA: ProjectsData = {
                Supabase(PostgreSQL)ベースの永続化レイヤーを構築し、階層的なクエリキー(Query Keys)戦略を通じて効率的なキャッシュ無効化とデータ同期を実装しました。`,
         },
       },
-      {
-        title: {
-          ko: 'Lighthouse 성능 (프로덕션 빌드 기준)',
-          en: 'Lighthouse Performance (Production Build)',
-          ja: 'Lighthouseパフォーマンス(本番ビルド基準)',
-        },
-        description: {
-          ko: `불필요한 렌더링을 줄이고 상태 소유권을 명확히 분리하여 성능을 최적화했습니다.
-        클라이언트 하이드레이션을 제어해 Layout Shift를 최소화했으며,
-        로컬 데이터 환경 기준 Lighthouse 성능 점수 95점 이상을 확인했습니다.`,
-
-          en: `Optimized rendering performance by clearly separating state ownership and minimizing unnecessary re-renders.
-        Controlled client-side hydration to reduce layout shifts,
-        achieving Lighthouse performance scores above 95 in a local data environment.`,
-
-          ja: `状態所有権を明確に分離し不要なレンダリングを削減することでパフォーマンスを最適化しました。
-        クライアント側ハイドレーションを制御してレイアウトシフトを最小化し、
-        ローカルデータ環境でLighthouseスコア95以上を確認しました。`,
-        },
-      },
     ],
-    footer: {
-      ko: `현재 Supabase 기반의 데이터 파이프라인 구축이 완료되었으며, 향후 대규모 데이터 처리를 위해 DB View, Indexing, Server-side Aggregation 최적화를 계획하고 있습니다.`,
-      en: `The Supabase-based data pipeline is now fully operational. Future plans include optimizing database views, indexing strategies, and server-side aggregation for large-scale data processing.`,
-      ja: `現在、Supabaseベースのデータパイプライン構築が完了しており、今後は大規模データ処理のためにDB View、Indexing、Server-side Aggregationの最適化を予定しています。`,
-    },
   },
   performance: {
     lighthouse: {
@@ -267,6 +244,14 @@ export const PROJECTS_DATA: ProjectsData = {
       tbt: '0 ms',
       cls: '0.003',
       speedIndex: '0.5 s',
+    },
+    footer: {
+      ko: `성능 지표는 Supabase 데이터 마이그레이션 이전 로컬 환경에서 측정되었습니다.
+            향후 대규모 데이터 처리를 위해 DB View, Indexing 전략, Server-side Aggregation 최적화를 진행할 예정입니다.`,
+      en: `The following metrics represent baseline performance measurements captured in a local environment before the Supabase migration.
+            Future optimization plans include DB Views, indexing strategies, and server-side aggregation for scalable data processing.`,
+      ja: `パフォーマンス指標は、Supabaseへのデータ移行前のローカル環境で測定されています。
+           今後は大規模データ処理のため、DB ViewやIndexing戦略、Server-side Aggregationの最適化を進める予定です。`,
     },
   },
 };

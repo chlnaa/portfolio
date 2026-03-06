@@ -9,6 +9,7 @@ import { Challenges } from './Challenges';
 import { Lessons } from './Lessons';
 import type { ProjectsData } from '@/types/portfolio';
 import { Architecture } from './Architecture';
+import { Performance } from './Performance';
 import type { Language } from '@/context/LanguageProvider';
 
 interface ProjectAccordionProps {
@@ -18,20 +19,12 @@ interface ProjectAccordionProps {
 
 export function ProjectAccordion({ project, language }: ProjectAccordionProps) {
   return (
-    <Accordion type='single' collapsible defaultValue='architecture' className='w-full select-none'>
-      <AccordionItem value='architecture' className='border-cyan-500/20'>
-        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
-          Architecture & Performance
-        </AccordionTrigger>
-        <AccordionContent>
-          <Architecture
-            performance={project.performance}
-            architecture={project.architecture}
-            language={language}
-          />
-        </AccordionContent>
-      </AccordionItem>
-
+    <Accordion
+      type='single'
+      collapsible
+      defaultValue='features'
+      className='w-full select-none'
+    >
       <AccordionItem value='features' className='border-cyan-500/20'>
         <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
           Key Technical Features
@@ -47,6 +40,27 @@ export function ProjectAccordion({ project, language }: ProjectAccordionProps) {
         </AccordionTrigger>
         <AccordionContent>
           <Challenges challenges={project.challenges} language={language} />
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value='architecture' className='border-cyan-500/20'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
+          Architecture
+        </AccordionTrigger>
+        <AccordionContent>
+          <Architecture
+            architecture={project.architecture}
+            language={language}
+          />
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value='performance' className='border-cyan-500/20'>
+        <AccordionTrigger className='font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 [&>svg]:text-cyan-400/80 hover:no-underline hover:text-cyan-400 hover:[&_svg]:text-cyan-400'>
+          Performance
+        </AccordionTrigger>
+        <AccordionContent>
+          <Performance performance={project.performance} language={language} />
         </AccordionContent>
       </AccordionItem>
 
