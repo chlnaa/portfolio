@@ -38,22 +38,11 @@ export function HeroSection() {
       id='home'
       className='relative flex min-h-screen items-center overflow-hidden px-6'
     >
-      <div className='absolute inset-0 opacity-[0.03]'>
-        <div
-          className='h-full w-full'
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(6,182,212,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.5) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
-        />
-      </div>
-
       <div className='absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-cyan-600/10 blur-[120px]' />
       <div className='absolute -left-20 top-1/2 h-[400px] w-[400px] rounded-full bg-cyan-600/15 blur-[100px]' />
 
-      <div className='relative mx-auto flex w-full max-w-7xl items-center justify-between gap-12'>
-        <div className='flex  max-w-xl flex-col justify-center'>
+      <div className='relative mx-auto flex w-full max-w-7xl items-center justify-between gap-8'>
+        <div className='max-w-2xl flex flex-col justify-center'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,7 +68,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className='mt-6 max-w-lg text-pretty whitespace-pre-line  text-base leading-relaxed text-muted-foreground md:text-lg'
+            className='mt-6 max-w-2xl text-pretty whitespace-pre-line text-base leading-relaxed text-muted-foreground md:text-lg'
           >
             {HOME_DATA.description[language]}
           </motion.p>

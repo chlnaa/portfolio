@@ -10,7 +10,7 @@ export default function Footer() {
             <Code2 className='h-3.5 w-3.5 text-cyan-400' />
           </div>
 
-          <span className='text-sm font-bold text-foreground'>
+          <span className='text-sm font-bold text-muted-foreground'>
             Copyrignt &copy; Choi. All Rights Reserved.
           </span>
         </div>
