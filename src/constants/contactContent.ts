@@ -3,19 +3,19 @@ import type { ContactContent } from '@/types/portfolio';
 export const CONTACT_CONTENT: ContactContent = {
   description: [
     {
-      en: 'I am a frontend developer who balances technical rigor with a user-centric perspective to build reliable, high-performance interfaces.',
-      ko: '기술적 엄밀함과 사용자 중심의 관점을 조화시켜, 신뢰할 수 있는 고성능 인터페이스를 구축하는 프론트엔드 개발자입니다.',
-      ja: '技術的な厳密さとユーザー中心の視点を調和させ、信頼性の高い高性能なインターフェースを構築するフロントエンド開発者です。',
+      en: 'Frontend Engineer dedicated to designing reliable systems based on data integrity and building high-performance, user-centric interfaces.',
+      ko: '데이터 무결성을 기반으로 신뢰할 수 있는 시스템을 설계하고, 사용자 중심의 고성능 인터페이스를 구현하는 프론트엔드 엔지니어입니다.',
+      ja: 'データの完全性を基盤に信頼性の高いシステムを設計し、ユーザー中心の高性能インターフェースを実装するフロントエンドエンジニアです。',
     },
     {
-      en: 'Drawing on my professional experience in localization, I prioritize clear communication and proactive problem-solving within a team.',
-      ko: '로컬라이징 실무 경험을 바탕으로, 팀 내에서 명확한 커뮤니케이션과 주도적인 문제 해결을 최우선으로 생각합니다.',
-      ja: 'ローカライズ実務経験を活かし、チーム内での明確なコミュニケーションと主体的な問題解決を大切にしています。',
+      en: 'Integrating my professional background in precise game localization into software design, I contribute to team productivity through logical communication.',
+      ko: '게임 로컬라이징 실무에서 다룬 정밀한 텍스트/상호작용 경험을 소프트웨어 설계에 녹여내며, 논리적인 커뮤니케이션으로 팀의 생산성에 기여합니다.',
+      ja: 'ゲームローカライズ実務で培った精密なテキスト・相互作用の経験をソフトウェア設計に活かし、論理的なコミュニケーションでチームの生産性に貢献します。',
     },
     {
-      en: 'I am currently seeking new frontend opportunities and would be glad to discuss how I can contribute to your team.',
-      ko: '현재 새로운 프론트엔드 직무 기회를 찾고 있으며, 제가 팀에 어떻게 기여할 수 있을지 함께 논의하고 싶습니다.',
-      ja: '現在、フロントエンドエンジニアとしての新たな機会を探しており、チームにどのように貢献できるかぜひお話しできれば幸いです。',
+      en: 'I am currently seeking new frontend opportunities and am ready to contribute to both technical challenges and business growth.',
+      ko: '현재 새로운 프론트엔드 기회를 찾고 있으며, 기술적 도전과 비즈니스 성장을 함께 고민할 준비가 되어 있습니다.',
+      ja: '現在、フロントエンドエンジニアとしての新たな機会を探しており、技術的挑戦とビジネスの成長を共に追求する準備ができています。',
     },
     {
       en: 'I typically respond within 24 hours.',
