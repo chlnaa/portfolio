@@ -4,6 +4,7 @@ import type { ProjectsData } from '@/types/portfolio';
 import type { Language } from '@/context/LanguageProvider';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { CONTACT_LINKS } from '@/constants/contactLink';
 
 interface ProjectHeroProps {
   project: ProjectsData;
@@ -13,6 +14,8 @@ interface ProjectHeroProps {
 export function ProjectHero({ project, language }: ProjectHeroProps) {
   const [index, setIndex] = useState(0);
   const IMAGES = ['/images/todo.png', '/images/timer.png', '/images/chart.png'];
+  const githubLink = CONTACT_LINKS.find((link) => link.label === 'GitHub');
+  const projectLink = CONTACT_LINKS.find((link) => link.label === 'DeployUrl');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,6 +36,32 @@ export function ProjectHero({ project, language }: ProjectHeroProps) {
               <Badge className='w-fit rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-muted-foreground border border-white/5'>
                 {project.period}
               </Badge>
+
+              {githubLink && (
+                <a
+                  className='flex h-5 w-5 items-center justify-center rounded-md'
+                  href={githubLink.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {githubLink.icon && (
+                    <githubLink.icon className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
+                  )}
+                </a>
+              )}
+
+              {projectLink && (
+                <a
+                  className='flex h-5 w-5 items-center justify-center rounded-md '
+                  href={projectLink.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {projectLink.icon && (
+                    <projectLink.icon className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
+                  )}
+                </a>
+              )}
             </div>
 
             <p className='font-mono text-cyan-400/80 text-xs md:text-sm uppercase'>
