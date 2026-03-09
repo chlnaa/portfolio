@@ -2,7 +2,7 @@ import type { ProjectsData } from '@/types/portfolio';
 
 export const PROJECTS_DATA: ProjectsData = {
   id: 'focusdo',
-  title: 'Focusdo',
+  title: 'FocusDo',
   period: '2026.01 ~ Present',
   role: 'Planning · Design · Frontend Development',
   techStack: [
