@@ -10,7 +10,9 @@ import { useLanguage } from '@/context/LanguageProvider';
 export function ContactSection() {
   const { language } = useLanguage();
   const content = CONTACT_CONTENT;
-  const links = CONTACT_LINKS;
+  const filteredLinks = CONTACT_LINKS.filter(
+    (link) => link.label === 'Email' || link.label === 'GitHub',
+  );
 
   return (
     <section id='contact' className='relative px-6 py-24 md:py-32'>
@@ -33,8 +35,8 @@ export function ContactSection() {
           className='flex flex-col items-center text-center'
         >
           <div className='grid gap-8 md:grid-cols-2'>
-            <div className='flex flex-col gap-3'>
-              {links.map((item) => {
+            <div className='flex flex-col gap-4'>
+              {filteredLinks.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Card
@@ -82,17 +84,17 @@ export function ContactSection() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className='flex flex-col items-baseline rounded-lg border border-[#ffffff10] bg-[#0f1115] p-8 shadow-lg shadow-cyan-500/20 '
+              className='flex flex-col items-baseline rounded-lg border border-[#ffffff10] bg-[#0f1115] p-5 shadow-lg shadow-cyan-500/20 '
             >
               <h3 className='font-mono text-sm font-medium text-cyan-400'>
                 {content.openToWork.badge[language]}
               </h3>
 
-              <p className='mt-4 text-lg font-semibold text-foreground'>
+              <p className='mt-3 text-lg font-semibold text-foreground'>
                 {content.openToWork.headline[language]}
               </p>
 
-              <p className='mt-4 leading-relaxed text-left text-muted-foreground'>
+              <p className='mt-3 leading-relaxed text-left text-muted-foreground'>
                 {content.openToWork.description.map((line, idx) => (
                   <p key={idx}>{line[language]}</p>
                 ))}
