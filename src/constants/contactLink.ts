@@ -1,6 +1,6 @@
 import type { ContactLink } from '@/types/portfolio';
 import { Mail } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 
 export const CONTACT_LINKS: ContactLink[] = [
   {
@@ -20,5 +20,11 @@ export const CONTACT_LINKS: ContactLink[] = [
     value: 'linkedin.com/in/your-id',
     href: 'https://linkedin.com/in/your-id',
     icon: FaLinkedin,
+  },
+  {
+    label: 'DeployUrl',
+    value: 'DeployUrl',
+    href: 'https://',
+    icon: FaExternalLinkAlt,
   },
 ];
