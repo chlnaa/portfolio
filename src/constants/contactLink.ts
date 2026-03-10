@@ -5,14 +5,20 @@ import { FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 export const CONTACT_LINKS: ContactLink[] = [
   {
     label: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
+    value: 'choinaa26@gmail.com',
+    href: 'mailto:choinaa26@gmail.com',
     icon: Mail,
   },
   {
     label: 'GitHub',
-    value: 'github.com/your-id',
-    href: 'https://github.com/your-id',
+    value: 'github.com/chlnaa',
+    href: 'https://github.com/chlnaa',
+    icon: FaGithub,
+  },
+  {
+    label: 'GitHubProject',
+    value: 'github.com/chlnaa/focus-based-todo',
+    href: 'https://github.com/chlnaa/focus-based-todo',
     icon: FaGithub,
   },
   {
@@ -24,7 +30,7 @@ export const CONTACT_LINKS: ContactLink[] = [
   {
     label: 'DeployUrl',
     value: 'DeployUrl',
-    href: 'https://',
+    href: 'https://focus-based-todo.vercel.app',
     icon: FaExternalLinkAlt,
   },
 ];

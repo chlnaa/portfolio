@@ -61,7 +61,9 @@ export default function NavbarMenu() {
             <div className='flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-500/30 bg-linear-to-br from-cyan-500/20 to-blue-600/20'>
               <Code2 className='h-4 w-4 text-cyan-400' />
             </div>
-            <span className='text-lg font-bold text-foreground'>Portfolio</span>
+            <span className='text-lg font-bold text-foreground'>
+              Choi&apos;s Portfolio
+            </span>
           </a>
 
           <div className='hidden items-center gap-8 md:flex'>
