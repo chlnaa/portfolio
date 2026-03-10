@@ -14,7 +14,9 @@ interface ProjectHeroProps {
 export function ProjectHero({ project, language }: ProjectHeroProps) {
   const [index, setIndex] = useState(0);
   const IMAGES = ['/images/todo.png', '/images/timer.png', '/images/chart.png'];
-  const githubLink = CONTACT_LINKS.find((link) => link.label === 'GitHub');
+  const githubLink = CONTACT_LINKS.find(
+    (link) => link.label === 'GitHubProject',
+  );
   const projectLink = CONTACT_LINKS.find((link) => link.label === 'DeployUrl');
 
   useEffect(() => {
