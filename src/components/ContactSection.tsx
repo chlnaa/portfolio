@@ -22,7 +22,7 @@ export function ContactSection() {
         <SectionHeader eyebrow='Contact' title='Get In Touch' />
 
         <motion.div {...fadeInUp} className='mb-8'>
-          <div className='leading-relaxed text-muted-foreground'>
+          <div className='leading-relaxed text-muted-foreground select-none'>
             {content.description.map((line, idx) => (
               <p key={idx}>{line[language]}</p>
             ))}
@@ -64,10 +64,10 @@ export function ContactSection() {
                           </div>
 
                           <div>
-                            <p className='text-left text-sm font-medium text-foreground'>
+                            <p className='text-left text-sm font-medium text-foreground select-none'>
                               {item.label}
                             </p>
-                            <p className='text-sm text-muted-foreground'>
+                            <p className='text-sm text-muted-foreground select-none'>
                               {item.value}
                             </p>
                           </div>
@@ -84,7 +84,7 @@ export function ContactSection() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className='flex flex-col items-baseline rounded-lg border border-[#ffffff10] bg-[#0f1115] p-5 shadow-lg shadow-cyan-500/20 '
+              className='flex flex-col items-baseline rounded-lg border border-[#ffffff10] bg-[#0f1115] p-5 shadow-lg shadow-cyan-500/20 select-none'
             >
               <h3 className='font-mono text-sm font-medium text-cyan-400'>
                 {content.openToWork.badge[language]}
