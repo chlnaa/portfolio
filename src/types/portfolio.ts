@@ -56,6 +56,7 @@ export interface ArchitectureSection {
 }
 
 export interface ArchitectureData {
+  intro: LocalizedText;
   sections: ArchitectureSection[];
 }
 

@@ -14,21 +14,33 @@ export const PROJECTS_DATA: ProjectsData = {
     'D3.js',
   ],
   introduction: {
-    ko: '할 일 관리와 집중 세션을 명시적 상태 모델링 기반으로 통합한 생산성 애플리케이션입니다.',
-    en: `A productivity application that unifies task management
-         and focus sessions through explicit state modeling and deterministic data flow.`,
-    ja: `明示的な状態モデリングと決定論的なデータフローを基盤に、
-         タスク管理と集中セッションを統合した生産性アプリケーションです。`,
+    ko: `할 일 관리와 집중 세션 기록을 결합한
+        생산성 웹 애플리케이션입니다.
+        데이터 흐름을 명확하게 유지하고
+        상태 관리가 예측 가능하도록 구조를 설계했습니다.`,
+    en: `A productivity web application that combines task management
+        with focus session tracking.
+        The system is structured to keep data flow predictable
+        and state management explicit.`,
+    ja: `タスク管理と集中セッション記録を組み合わせた
+        生産性Webアプリケーションです。
+        データフローを明確に保ち、
+        状態管理が予測可能になるよう構造を設計しました。`,
   },
 
   overview: {
-    ko: `명시적인 상태 소유권과 결정론적 데이터 흐름을 중심으로 설계하여 UI 일관성을 확보하고 장기적인 유지보수 복잡도를 낮추었습니다.
-         이 아키텍처는 데이터 무결성, 예측 가능한 상태 전이, 그리고 장기적인 유지보수성을 핵심 원칙으로 설계되었습니다.`,
-    en: `Architected around explicit state ownership and deterministic data flow, 
-         while improving UI consistency and reducing long-term maintenance complexity.
-         This architecture prioritizes data integrity, predictable state transitions, and long-term maintainability.`,
-    ja: `明示的な状態所有権と決定論的なデータフローを軸に設計し、 UIの一貫性を高めつつ長期的な保守複雑度を低減しました。
-    このアーキテクチャは、データ整合性、予測可能な状態遷移、そして長期的な保守性を重視して設計されています。`,
+    ko: `애플리케이션은 명확한 상태 소유권과
+          예측 가능한 데이터 흐름을 중심으로 설계되었습니다.
+          이를 통해 UI 일관성을 높이고
+          프로젝트가 확장되더라도 유지보수가 쉬운 구조를 만들었습니다.`,
+    en: `The application focuses on clear state ownership
+          and a predictable data flow.
+          This approach improves UI consistency
+          and makes the system easier to maintain as it grows.`,
+    ja: `アプリケーションは明確な状態所有権と
+          予測可能なデータフローを中心に設計されています。
+          これによりUIの一貫性を高め、
+          システムが拡張しても保守しやすい構造を実現しました。`,
   },
 
   keyFeatures: [
@@ -39,10 +51,12 @@ export const PROJECTS_DATA: ProjectsData = {
         ja: '日付中心の状態分離',
       },
       description: {
-        ko: `selectedDate를 단일 진실 공급원(SSOT)으로 정의하여 날짜 간 상태 오염을 제거하고, 
-             결정론적인 태스크 렌더링을 보장했습니다.`,
-        en: `Defined selectedDate as a single source of truth (SSOT), ensuring deterministic task rendering and eliminating cross-date state contamination.`,
-        ja: `selectedDateを単一真実ソース(SSOT)として定義し、 日付間の状態汚染を排除しつつ決定論的なタスクレンダリングを実現しました。`,
+        ko: `selectedDate를 단일 진실 공급원(SSOT)으로 설정하여
+             날짜 간 상태 오염을 방지하고 예측 가능한 태스크 렌더링을 보장했습니다.`,
+        en: `Established selectedDate as the Single Source of Truth (SSOT),
+             preventing cross-date state contamination and ensuring consistent task rendering.`,
+        ja: `selectedDateを単一真実のソース(SSOT)として設定し、
+             日付間の状態汚染を防ぎつつ予測可能なタスクレンダリングを実現しました。`,
       },
     },
     {
@@ -89,11 +103,13 @@ export const PROJECTS_DATA: ProjectsData = {
   challenges: [
     {
       problem: {
-        ko: `useReducer 기반의 개별 상태 관리로 인해 투두와 포커스 데이터가 분산 저장되며 
-            UI 불일치(Data Fragmentation)가 발생했습니다.`,
-        en: `Individual state management using useReducer led to dispersed data storage between Todo and Focus pages, causing UI inconsistencies (Data Fragmentation).`,
-        ja: `useReducerベースの個別状態管理により、TodoとFocusデータが分散保存され、
-             UIの不整合(Data Fragmentation)が発生しました。`,
+        ko: `useReducer 기반의 개별 상태 관리로 인해 Todo 페이지와 Focus 페이지 사이에서
+             데이터가 분산되며 UI 불일치 문제가 발생했습니다.`,
+        en: `Managing state separately with useReducer caused data fragmentation
+             between the Todo and Focus pages, which led to UI inconsistencies.`,
+        ja: `useReducerベースで状態を個別管理していたため、
+             TodoページとFocusページの間でデータが分散し、
+             UIの不整合が発生しました。`,
       },
       solution: {
         ko: `중앙 집중형 상태 관리 도구인 Zustand를 도입하여 상태 저장소를 통합하고, 
@@ -112,11 +128,12 @@ export const PROJECTS_DATA: ProjectsData = {
     },
     {
       problem: {
-        ko: `집중 세션 저장과 통계 업데이트를 동시에 수행하는 Dual-write 구조에서 발생할 수 있는 
-        데이터 정합성 리스크를 식별했습니다.`,
-        en: `Identified data consistency risks within a dual-write structure that simultaneously handled session saving and statistics updates.`,
-        ja: `集中セッション保存と統計更新を同時に行うDual-write構造で
-            発生し得るデータ整合性のリスクを特定しました。`,
+        ko: `집중 세션 저장과 통계 업데이트를 동시에 처리하는
+             Dual-write 구조에서 데이터 정합성 문제가 발생할 가능성을 확인했습니다.`,
+        en: `Identified potential data consistency risks caused by a dual-write structure
+             that handled both session persistence and statistics updates.`,
+        ja: `集中セッション保存と統計更新を同時に処理する
+             Dual-write構造により、データ整合性のリスクが発生する可能性を確認しました。`,
       },
       solution: {
         ko: `가공된 통계 컬럼을 제거하고 원천 데이터인 focus_sessions를 기반으로 
@@ -139,27 +156,35 @@ export const PROJECTS_DATA: ProjectsData = {
     ko: [
       '프로젝트 초기 설계의 한계를 인지하고, 데이터 정합성을 위해 아키텍처를 과감히 재설계(Refactoring)하는 결단력의 중요성을 배웠습니다.',
       'useReducer의 데이터 파편화 문제를 해결하며, 복잡한 상태를 중앙 집중식(SSOT)으로 관리할 때 얻는 시스템 안정성을 체득했습니다.',
-      '단순히 기능을 구현하는 수준을 넘어, 데이터 무결성과 정합성을 우선순위에 둔 엔지니어링 사고방식을 확립했습니다.',
+      '이 프로젝트를 통해 기능 구현보다 데이터 무결성을 우선하는 설계의 중요성을 배웠습니다.',
       'React Query와 Zustand의 역할을 명확히 분리하여 서버 상태와 UI 상태 간의 간섭을 최소화하는 최적의 설계 패턴을 익혔습니다.',
     ],
     en: [
       'Learned the importance of decisive refactoring after recognizing the limitations of initial architectural designs for data consistency.',
       'Experienced the system stability gained from centralized state management (SSOT) while solving data fragmentation issues with useReducer.',
-      'Established an engineering mindset that prioritizes data integrity and consistency over simple feature implementation.',
+      'This project helped me understand the importance of prioritizing data integrity over quick feature implementation.',
       'Mastered optimal design patterns to minimize interference between server and UI states by clearly separating the roles of React Query and Zustand.',
     ],
     ja: [
       'プロジェクト初期設計の限界を認識し、データ整合性のためにアーキテクチャを果敢に再設計(Refactoring)する決断力の重要性を学びました。',
       'useReducerのデータ断片化問題を解決し、複雑な状態を中央集中方式(SSOT)で管理することで得られるシステム安定性を体得しました。',
-      '単なる機能実装を超え、データの完全性と整合性を最優先するエンジニアリング思考を確立しました。',
+      'このプロジェクトを通じて、機能実装よりもデータ整合性を優先する設計の重要性を学びました。',
       'React QueryとZustandの役割を明確に分離し、サーバー状態とUI状態の干渉を最小限に抑える最適な設計パターンを習得しました。',
     ],
   },
   links: {
-    github: 'https://github.com/your-repo/focusdo',
-    demo: 'https://focusdo-demo.com',
+    github: 'https://github.com/chlnaa/focus-based-todo',
+    demo: 'https://focus-based-todo.vercel.app',
   },
   architecture: {
+    intro: {
+      ko: `아래 다이어그램은 애플리케이션의
+          단방향 데이터 흐름과 집계 파이프라인 구조를 보여줍니다.`,
+      en: `The following diagram illustrates the application's
+          unidirectional data flow and aggregation pipeline.`,
+      ja: `以下の図は、アプリケーションの
+          単方向データフローと集約パイプライン構造を示しています。`,
+    },
     sections: [
       {
         title: {
@@ -183,14 +208,25 @@ export const PROJECTS_DATA: ProjectsData = {
           ja: 'データ整合性および集約戦略',
         },
         description: {
-          ko: `데이터 불일치를 방지하기 위해 focus_sessions를 단일 진실 공급원(SSOT)으로 정의하는 
-               데이터 모델링을 수행했습니다.
-          가공된 상태값(Derived Data)을 DB에 저장하지 않고 React Query 기반 클라이언트 집계를 통해 
-          실시간 통계 파이프라인을 구축했습니다.`,
-          en: `Defined focus_sessions as the Single Source of Truth (SSOT) to prevent data inconsistencies.
-          Instead of storing derived data in the database, a deterministic aggregation pipeline was implemented using React Query to compute statistics in real time.`,
-          ja: `データ不整合を防止するため、focus_sessionsを単一真実のソース(SSOT)として定義するデータモデリングを実施しました。
-          加工された状態値(Derived Data)をDBに保存せず、React Queryベースのクライアント集約によるリアルタイム統計パイプラインを構築しました。`,
+          ko: `데이터 무결성을 유지하기 위해 focus_sessions 테이블을 단일 진실 공급원(SSOT)으로 정의했습니다.
+        가공된 통계 데이터를 데이터베이스에 저장하지 않고, 원천 세션 데이터를 기반으로 
+        클라이언트에서 집계를 수행해 생산성 지표를 계산하도록 설계했습니다.
+        이 구조는 Dual-write로 인한 데이터 불일치 위험을 제거합니다.`,
+
+          en: `To maintain data integrity, the focus_sessions table
+        was defined as the Single Source of Truth (SSOT).
+        Instead of storing derived statistics in the database,
+        productivity metrics are calculated through
+        client-side aggregation based on the raw session data.
+        This design removes the risk of data inconsistencies
+        caused by dual-write updates.`,
+
+          ja: `データ整合性を保つため、
+    focus_sessions テーブルを単一の真実のソース(SSOT)として定義しました。
+    加工された統計データをデータベースに保存せず、
+    セッションの生データを基にクライアント側で集約処理を行い
+    生産性指標を計算する設計としました。
+    この構造により、Dual-writeによるデータ不整合のリスクを排除しています。`,
         },
       },
       {
@@ -203,14 +239,14 @@ export const PROJECTS_DATA: ProjectsData = {
           ko: `Page → Hook → Component 구조를 기반으로 명시적인 상태 소유권을 정의했습니다.
           공유 상태 변경은 Zustand 스토어 액션으로 중앙 집중화하고, 
           UI 전용 상태는 컴포넌트 내부에 격리하여 예측 가능한 렌더링을 보장했습니다.
-          또한 클라이언트 하이드레이션을 제어하여 레이아웃 시프트를 최소화(CLS 0.003)했으며, 
-          프로덕션 환경에서 Lighthouse 성능 점수 95점 이상을 유지했습니다.`,
+          또한 클라이언트 하이드레이션을 제어하여 레이아웃 시프트를 최소화했으며,
+          로컬 Lighthouse 측정 기준 CLS 0.003을 기록했습니다.`,
           en: `Implemented a Page → Hook → Component architecture with explicit state ownership.
           Centralized shared mutations in Zustand store actions while isolating UI-only state within components to ensure deterministic rendering.
-               Controlled client-side hydration to minimize layout shifts (CLS 0.003) and maintained Lighthouse performance scores above 95 in production audits.`,
+          Controlled client-side hydration to minimize layout shifts. In local Lighthouse measurements, the application recorded a CLS score of 0.003.`,
           ja: `Page → Hook → Component 構造を基盤に、明示的な状態所有権を定義しました。
           共有状態の変更はZustandストアアクションに集約し、UI専用状態はコンポーネント内部に隔離することで決定論的なレンダリングを実現しました。
-               さらにクライアント側ハイドレーションを制御し、CLS 0.003までレイアウトシフトを抑制し、本番環境でLighthouseスコア95以上を維持しました。`,
+         また、クライアントサイドのハイドレーションを制御することでレイアウトシフトを最小限に抑え、ローカルのLighthouse測定基準でCLS 0.003を記録しました。`,
         },
       },
       {
