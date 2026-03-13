@@ -4,7 +4,7 @@ import type { ProjectsData } from '@/types/portfolio';
 import type { Language } from '@/context/LanguageProvider';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CONTACT_LINKS } from '@/constants/contactLink';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface ProjectHeroProps {
   project: ProjectsData;
@@ -14,10 +14,7 @@ interface ProjectHeroProps {
 export function ProjectHero({ project, language }: ProjectHeroProps) {
   const [index, setIndex] = useState(0);
   const IMAGES = ['/images/todo.png', '/images/timer.png', '/images/chart.png'];
-  const githubLink = CONTACT_LINKS.find(
-    (link) => link.label === 'GitHubProject',
-  );
-  const projectLink = CONTACT_LINKS.find((link) => link.label === 'DeployUrl');
+  const { github, demo } = project.links;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,29 +36,25 @@ export function ProjectHero({ project, language }: ProjectHeroProps) {
                 {project.period}
               </Badge>
 
-              {githubLink && (
+              {github && (
                 <a
                   className='flex h-5 w-5 items-center justify-center rounded-md'
-                  href={githubLink.href}
+                  href={github}
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  {githubLink.icon && (
-                    <githubLink.icon className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
-                  )}
+                  <FaGithub className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
                 </a>
               )}
 
-              {projectLink && (
+              {demo && (
                 <a
                   className='flex h-5 w-5 items-center justify-center rounded-md '
-                  href={projectLink.href}
+                  href={demo}
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  {projectLink.icon && (
-                    <projectLink.icon className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
-                  )}
+                  <FaExternalLinkAlt className='h-5 w-5 text-muted-foreground transition-all duration-200 ease-in hover:scale-125 hover:text-cyan-500' />
                 </a>
               )}
             </div>

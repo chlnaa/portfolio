@@ -1,6 +1,6 @@
 import type { ContactLink } from '@/types/portfolio';
 import { Mail } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 export const CONTACT_LINKS: ContactLink[] = [
   {
@@ -14,23 +14,5 @@ export const CONTACT_LINKS: ContactLink[] = [
     value: 'github.com/chlnaa',
     href: 'https://github.com/chlnaa',
     icon: FaGithub,
-  },
-  {
-    label: 'GitHubProject',
-    value: 'github.com/chlnaa/focus-based-todo',
-    href: 'https://github.com/chlnaa/focus-based-todo',
-    icon: FaGithub,
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/your-id',
-    href: 'https://linkedin.com/in/your-id',
-    icon: FaLinkedin,
-  },
-  {
-    label: 'DeployUrl',
-    value: 'DeployUrl',
-    href: 'https://focus-based-todo.vercel.app',
-    icon: FaExternalLinkAlt,
   },
 ];

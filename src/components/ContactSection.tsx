@@ -4,15 +4,12 @@ import { ArrowUpRight } from 'lucide-react';
 import { SectionHeader } from './header/SectionHeader';
 import { fadeInUp } from '@/lib/animations';
 import { CONTACT_CONTENT } from '@/constants/contactContent';
-import { CONTACT_LINKS } from '@/constants/contactLink';
 import { useLanguage } from '@/context/LanguageProvider';
+import { CONTACT_LINKS } from '@/constants/contactLink';
 
 export function ContactSection() {
   const { language } = useLanguage();
   const content = CONTACT_CONTENT;
-  const filteredLinks = CONTACT_LINKS.filter(
-    (link) => link.label === 'Email' || link.label === 'GitHub',
-  );
 
   return (
     <section id='contact' className='relative px-6 py-24 md:py-32'>
@@ -36,7 +33,7 @@ export function ContactSection() {
         >
           <div className='grid gap-8 md:grid-cols-2'>
             <div className='flex flex-col gap-4'>
-              {filteredLinks.map((item) => {
+              {CONTACT_LINKS.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Card
@@ -95,9 +92,7 @@ export function ContactSection() {
               </p>
 
               <p className='mt-3 leading-relaxed text-left text-muted-foreground'>
-                {content.openToWork.description.map((line, idx) => (
-                  <p key={idx}>{line[language]}</p>
-                ))}
+                {content.openToWork.description.map((item) => item[language])}
               </p>
 
               <div className='mt-6 flex items-center gap-2'>
