@@ -12,7 +12,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     company: {
       ko: '컴퓨터과학과 학사 편입',
       en: 'Bachelor’s Program (Transfer) - Computer Science',
-      ja: 'コンピュータ科学部 学士編入',
+      ja: 'コンピュータ科学科 学士編入',
     },
     isPrimary: true,
     description: {
@@ -51,9 +51,9 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 2,
     period: '2019.04 - 2023.09',
     role: {
-      ko: '로컬라이징 QA 및 프로젝트 담당 (파견)',
-      en: 'Localization QA & Project Specialist (Contractor)',
-      ja: 'ローカライズQAおよびプロジェクト担当 (派遣)',
+      ko: '로컬라이징 및 프로젝트 담당 (파견)',
+      en: 'Localization & Project Specialist (Contractor)',
+      ja: 'ローカライズおよびプロジェクト担当 (派遣)',
     },
     company: {
       ko: '게임 개발 / 로컬라이징 프로젝트',
@@ -92,9 +92,9 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 3,
     period: '2018.07 - 2019.04',
     role: {
-      ko: '행정 지원 (파견)',
-      en: 'Administrative Coordinator (Contractor)',
-      ja: '行政サポート (派遣)',
+      ko: '일반 사무 (파견)',
+      en: 'Office work (Contractor)',
+      ja: '一般事務 (派遣)',
     },
     company: {
       ko: '식품 제조 기업',
@@ -129,15 +129,15 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       ja: 'プラットフォーム運営サポート (契約)',
     },
     company: {
-      ko: '이러닝 플랫폼 사업부',
-      en: 'E-Learning Platform Division',
-      ja: 'Eラーニングプラットフォーム事業部',
+      ko: '플랫폼 사업부',
+      en: 'Platform Division',
+      ja: 'グプラットフォーム事業部',
     },
     isCondensed: true,
     description: {
       ko: '이러닝 서비스 어카운트 관리 및 시스템 운영 보조 업무를 수행했습니다.',
       en: 'Supported e-learning platform operations by managing user accounts and performing routine system checks.',
-      ja: 'eラーニングサービスのアカウント管理およびシステム運営補助業務を担当しました。',
+      ja: 'e-ラーニングサービスのアカウント管理およびシステム運営補助業務を担当しました。',
     },
     achievements: [
       {

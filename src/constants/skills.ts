@@ -10,12 +10,14 @@ export const SKILLS_DATA: SkillCategory[] = [
           {
             ko: 'Hook 기반 아키텍처를 활용한 재사용 가능한 컴포넌트 설계',
             en: 'Designing reusable components using a hook-based architecture',
-            ja: 'Hookベースのアーキテクチャを活用した再利用可能なコンポーネント設計',
+            ja: `Hookベースのアーキテクチャを活用した再利用可能な
+                   コンポーネント設計`,
           },
           {
             ko: '예측 가능한 UI 성능 유지를 위한 렌더링 스코프 최적화',
             en: 'Controlling rendering scope to maintain predictable UI performance',
-            ja: '予測可能なUIパフォーマンス維持のためのレンダリングスコープの最適化',
+            ja: `予測可能なUIパフォーマンス維持のための
+                  レンダリングスコープの最適化`,
           },
           {
             ko: '관심사 분리가 명확한 SPA 애플리케이션 구조 설계',
@@ -33,9 +35,9 @@ export const SKILLS_DATA: SkillCategory[] = [
         name: 'TypeScript',
         details: [
           {
-            ko: '인터페이스 기반의 컴포넌트 간 데이터 규격(Contract) 설계',
+            ko: '인터페이스 기반의 컴포넌트 간 데이터 규격( 설계',
             en: 'Designing interface-driven data contracts between components',
-            ja: 'インターフェース駆動のコンポーネント間データ契約(Contract)設計',
+            ja: 'インターフェース駆動のコンポーネント間データ契約設計',
           },
           {
             ko: '모호한 UI 상태 방지를 위한 명시적 상태 모델링',
@@ -53,19 +55,25 @@ export const SKILLS_DATA: SkillCategory[] = [
         name: 'State Management',
         details: [
           {
-            ko: 'TanStack Query를 활용한 서버 상태 관리 및 도메인 중심의 계층적 쿼리 키 설계',
+            ko: `TanStack Query를 활용한 서버 상태 관리 및 도메인 중심의 
+                계층적 쿼리 키 설계`,
             en: 'Server state management and domain-driven hierarchical query key design using TanStack Query',
-            ja: 'TanStack Queryを活用したサーバー状態管理およびドメイン中心の階層的クエリキー設計',
+            ja: `TanStack Queryを活用したサーバー状態管理および
+                ドメイン中心の階層的クエリキー設計`,
           },
           {
-            ko: 'Zustand 기반 단일 진실 공급원(SSOT) 구축으로 UI 상태의 일관성과 데이터 정합성 확보',
+            ko: `Zustand 기반 단일 진실 공급원(SSOT) 구축으로 
+                UI 상태의 일관성과 데이터 정합성 확보`,
             en: 'Establishing a Single Source of Truth (SSOT) with Zustand to ensure UI state consistency',
-            ja: 'Zustandベースの単一真実のソース(SSOT)構築によるUI状態の一貫性確保',
+            ja: `Zustandベースの単一真実のソース(SSOT)構築による
+                UI状態の一貫性確保`,
           },
           {
-            ko: '서버 상태 집계(Aggregation)와 클라이언트 UI 상태의 역할을 명확히 분리',
+            ko: `서버 상태 집계(Aggregation)와 클라이언트 UI 상태의 역할을 
+                 명확히 분리`,
             en: 'Clear separation between server state aggregation and client UI state',
-            ja: 'サーバー状態の集約(Aggregation)とクライアントUI状態の明確な役割分離',
+            ja: `サーバー状態の集約(Aggregation)とクライアントUI状態の
+                明確な役割分離`,
           },
         ],
       },
@@ -79,19 +87,25 @@ export const SKILLS_DATA: SkillCategory[] = [
         name: 'Workflow & Strategy',
         details: [
           {
-            ko: `Git Flow 기반 브랜칭 전략을 활용한 협업 및 점진적 리팩토링 경험`,
+            ko: `Git Flow 기반 브랜칭 전략을 활용한 협업 및 
+                  점진적 리팩토링 경험`,
             en: 'Experience with Git Flow-based branching strategies and incremental refactoring workflows',
-            ja: 'Git Flowベースのブランチ戦略を活用した協働および段階的リファクタリングの経験',
+            ja: `Git Flowベースのブランチ戦略を活用した協働および
+                段階的リファクタリングの経験`,
           },
           {
-            ko: 'AI 도구를 활용한 디버깅 가속화 및 코드 리뷰 보조 워크플로우 활용 경험',
+            ko: `AI 도구를 활용한 디버깅 가속화 및 코드 리뷰 보조 워크플로우 
+                활용 경험`,
             en: 'Experience using AI tools to accelerate debugging and assist code review workflows',
-            ja: 'AIツールを活用したデバッグ加速およびコードレビュー補助ワークフローの経験',
+            ja: `AIツールを活用したデバッグ加速およびコードレビュー補助
+                ワークフローの経験`,
           },
           {
-            ko: '기술적 의사결정 과정 기록 및 정기적인 리팩토링을 통한 기술 부채 관리',
+            ko: `기술적 의사결정 과정 기록 및 정기적인 리팩토링을 통한 
+                기술 부채 관리`,
             en: 'Managing technical debt through documented technical decisions and periodic refactoring',
-            ja: '技術的意思決定の記録および定期的リファクタリングによる技術的負債の管理',
+            ja: `技術的意思決定の記録および定期的リファクタリングによる
+                  技術的負債の管理`,
           },
         ],
       },

@@ -98,14 +98,14 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className='relative hidden items-center justify-center lg:flex'
         >
-          <div className='relative grid grid-cols-4 gap-5'>
+          <div className='relative grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3'>
             {techIcons.map((tech, i) => (
               <motion.div
                 key={tech.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.08 }}
-                className='group relative z-10 flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-500/5 backdrop-blur-sm'
+                className='group relative z-10 flex aspect-square w-20 sm:w-24 flex-col items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-500/5 backdrop-blur-sm'
               >
                 <motion.span
                   className='absolute -inset-3 -z-10 rounded-xl bg-cyan-400/60 blur-2xl'

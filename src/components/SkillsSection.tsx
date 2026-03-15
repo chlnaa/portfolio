@@ -49,7 +49,7 @@ export function SkillsSection() {
                             {skill.details.map((detail, idx) => (
                               <li
                                 key={idx}
-                                className='flex items-center gap-3 text-sm text-muted-foreground'
+                                className='flex items-center gap-3 text-sm text-muted-foreground whitespace-pre-line'
                               >
                                 <span className='h-1 w-1 shrink-0 rounded-full bg-cyan-500/40' />
                                 {detail[language]}
