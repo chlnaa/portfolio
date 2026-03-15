@@ -64,10 +64,10 @@ export function ProjectHero({ project, language }: ProjectHeroProps) {
             </p>
 
             <div>
-              <p className='text-sm md:text-lg whitespace-pre-line '>
+              <p className='text-sm md:text-lg whitespace-pre-line'>
                 {project.introduction[language]}
               </p>
-              <p className='text-xs md:text-sm text-muted-foreground pt-2 whitespace-pre-line '>
+              <p className='text-xs md:text-sm text-muted-foreground pt-5 whitespace-pre-line'>
                 {project.overview[language]}
               </p>
             </div>
