@@ -1,7 +1,7 @@
 import type { ArchitectureData } from '@/types/portfolio';
 import type { Language } from '@/context/LanguageProvider';
 import { Card, CardContent } from '../ui/card';
-import diagram from '../../../public/images/architecture-diagram.png';
+import diagram from '/images/architecture-diagram.png';
 
 interface ArchitectureProps {
   architecture: ArchitectureData;
