@@ -3,31 +3,25 @@ import type { HomeData } from '@/types/portfolio';
 export const HOME_DATA: HomeData = {
   title: 'Frontend Developer',
   subtitle: {
-    en: `Building reliable frontend systems through clear state management and consistent data flow.`,
-    ko: `명확한 상태 관리와 일관된 
-        데이터 흐름을 기반으로
-        신뢰할 수 있는 프론트엔드 시스템을 설계합니다.`,
-    ja: `明確な状態管理と一貫した
-          データフローを基盤に、信頼できる
-          フロントエンドシステムを
-          設計します。`,
+    en: `Engineering predictable UI systems by designing explicit state ownership and ensuring data integrity.`,
+    ko: `데이터 무결성과 명시적인 
+          상태 소유권을 설계하여, 
+          복잡한 비즈니스 로직에서도 
+          예측 가능한 UI 시스템을 구축합니다.`,
+    ja: `データの整合性と明示的な
+          状態所有権を設計し、
+          ビジネスロジックが複雑化しても
+          予測可能なUIシステムを
+          構築します。`,
   },
   description: {
-    en: `I focus on designing frontend systems where data flow and state ownership are clearly defined,
-        so that UI behavior remains predictable and maintainable as the application grows.`,
-    ko: `데이터 흐름과 상태 소유권이 명확하게 정의된 프론트엔드 시스템을 설계하여
-          애플리케이션이 확장되더라도 UI 동작이 예측 가능하고 유지보수 가능하도록 만드는 데 
-          집중합니다.`,
-    ja: `データフローと状態の所有関係を明確に定義したフロントエンドシステムを設計し、
-          アプリケーションが拡張してもUIの挙動が予測可能で保守しやすい構造を目指しています。`,
+    en: `Having prioritized precision and consistency in game localization, I now apply that same rigor to frontend engineering by ensuring data flows and states are managed with absolute clarity.`,
+    ko: `게임 로컬라이징에서 정확성과 일관성을 중요하게 다뤄왔습니다. 
+          이 경험을 바탕으로 프론트엔드에서도 데이터 흐름과 상태를 명확하게 관리하는 
+          개발을 하고 있습니다.`,
+    ja: `ゲームローカライズで培った正確性と一貫性へのこだわりを基盤に、
+        フロントエンドにおいてもデータフローと状態を厳格に管理する開発を実践しています。`,
   },
-  keywords: [
-    'React',
-    'TypeScript',
-    'SPA Architecture',
-    'Zustand',
-    'TanStack Query',
-  ],
   actions: [
     { label: 'View Project', href: '#project', variant: 'primary' },
     { label: 'Contact Me', href: '#contact', variant: 'secondary' },

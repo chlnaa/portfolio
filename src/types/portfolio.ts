@@ -25,7 +25,6 @@ export interface HomeData {
   title: string;
   subtitle: LocalizedText;
   description: LocalizedText;
-  keywords: string[];
   actions: HomeAction[];
 }
 
@@ -103,15 +102,6 @@ export interface ProjectsData {
   };
   architecture: ArchitectureData;
   performance: ProjectPerformance;
-}
-
-export interface TroubleshootingCase {
-  id: number;
-  title: string;
-  problem: string;
-  cause: string;
-  solution: string;
-  result: string[];
 }
 
 export interface GlobalExperience {

@@ -36,17 +36,14 @@ export const PROJECTS_DATA: ProjectsData = {
   keyFeatures: [
     {
       title: {
-        ko: '날짜 중심의 상태 격리',
-        en: 'Date-Centric State Isolation',
-        ja: '日付中心の状態分離',
+        ko: '목적 기반의 상태 격리 및 표준화',
+        en: 'Purpose-Driven State Isolation & Standardization',
+        ja: '目的ベースの状態分離と標準化',
       },
       description: {
-        ko: `selectedDate를 단일 진실 공급원(SSOT)으로 설정하여
-             날짜 간 상태 오염을 방지하고 예측 가능한 태스크 렌더링을 보장했습니다.`,
-        en: `Established selectedDate as the Single Source of Truth (SSOT),
-             preventing cross-date state contamination and ensuring consistent task rendering.`,
-        ja: `selectedDateを単一真実のソース(SSOT)として設定し、
-             日付間の状態汚染を防ぎつつ予測可能なタスクレンダリングを実現しました。`,
+        ko: `전역 상태 남용으로 인한 오염을 방지하기 위해 상태 소유권을 격리하고, 날짜 데이터를 문자열(string)로 표준화하여 정합성을 확보했습니다.`,
+        en: `Prevented state contamination by isolating state ownership and standardized date handling as strings to ensure data integrity.`,
+        ja: `状態汚染を防ぐため状態所有権を分離し、日付データを文字列(string)に標準化することでデータ整合性を確保しました。`,
       },
     },
     {
@@ -94,26 +91,21 @@ export const PROJECTS_DATA: ProjectsData = {
   challenges: [
     {
       problem: {
-        ko: `useReducer 기반의 개별 상태 관리로 인해 Todo 페이지와 Focus 페이지 사이에서
-             데이터가 분산되며 UI 불일치 문제가 발생했습니다.`,
-        en: `Managing state separately with useReducer caused data fragmentation
-             between the Todo and Focus pages, which led to UI inconsistencies.`,
-        ja: `useReducerベースで状態を個別管理していたため、TodoページとFocusページの間で
-            データが分散し、UIの不整合が発生しました。`,
+        ko: `기능 확장 및 외부 DB 연동 과정에서 전역 상태로 관리하던 날짜 데이터가 페이지 간에 간섭을 일으키는 구조적 결함을 발견했습니다.`,
+        en: `Identified structural flaws where date data managed in global state caused cross-page interference during feature expansion and DB integration.`,
+        ja: `機能拡張の過程で、グローバル状態で管理していた日付データがページ間で干渉を引き起こす構造的な欠陥を発見しました。`,
       },
       solution: {
-        ko: `중앙 집중형 상태 관리 도구인 Zustand를 도입하여 상태 저장소를 통합하고, 
-            모든 도메인 데이터를 단일 진실 공급원(SSOT) 구조로 재설계했습니다.`,
-        en: `Adopted Zustand for centralized state management, integrating stores and redesigning all domain data into a Single Source of Truth (SSOT) architecture.`,
-        ja: `中央集中型状態管理ツールのZustandを導入して状態ストアを統合し、
-             すべてのドメインデータを単一真実のソース(SSOT)構造に再設計しました。`,
+        ko: `공통 데이터의 무분별한 전역화를 지양하고, 페이지별 목적에 맞게 지역 상태(useState)로 격리하여 상태 간섭을 원천 차단했습니다.`,
+        en: `Avoided indiscriminate globalization of shared data and isolated it into page-specific local states to eliminate state interference.`,
+        ja: `共通データの無分別なグローバル化を避け、ページごとの目的に合わせてローカル状態(useState)に分離することで干渉を遮断しました。`,
       },
       result: {
-        ko: `데이터 흐름을 단일화하여 업데이트 지연 및 누락을 완전히 해결했으며, 
-        로직 중앙화를 통해 코드 유지보수성을 크게 향상시켰습니다.`,
-        en: `Resolved update delays and omissions by unifying data flow, and significantly improved maintainability through logic centralization.`,
-        ja: `データフローを一本化することで更新の遅延や漏れを完全に解決し、
-             ロジックの集約を通じてコードの保守性を大幅に向上させました。`,
+        ko: `상태 오염 문제를 근본적으로 해결했으며, 아키텍처의 질은 데이터의 성격과 소유권이 결정한다는 
+              설계 원칙을 확립했습니다.`,
+        en: `Fundamentally resolved state contamination issues and established a design principle that architecture quality is determined by data nature and ownership.`,
+        ja: `状態汚染問題を根本的に解決し、アーキテクチャの質はデータの性質と所有権が決定するという
+              設計原則を確立しました。`,
       },
     },
     {
