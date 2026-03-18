@@ -69,8 +69,8 @@ export const SKILLS_DATA: SkillCategory[] = [
                 UI状態の一貫性確保`,
           },
           {
-            ko: `서버 상태 집계(Aggregation)와 클라이언트 UI 상태의 역할을 
-                 명확히 분리`,
+            ko: `서버 상태 집계(Aggregation)와 클라이언트 UI 상태의 
+                역할을 명확히 분리`,
             en: 'Clear separation between server state aggregation and client UI state',
             ja: `サーバー状態の集約(Aggregation)とクライアントUI状態の
                 明確な役割分離`,
@@ -106,6 +106,15 @@ export const SKILLS_DATA: SkillCategory[] = [
             en: 'Managing technical debt through documented technical decisions and periodic refactoring',
             ja: `技術的意思決定の記録および定期的リファクタリングによる
                   技術的負債の管理`,
+          },
+          {
+            ko: `개인의 기억력보다 문서화와 자동화된 도구(정규표현식 등)를 
+                신뢰하며, 팀 전체의 결과물 퀄리티를 상향 평준화하는 
+                워크플로우를 지향합니다.`,
+            en: `Prioritizing documentation and automated tools over human memory to establish workflows that elevate and standardize the output quality of the entire team.`,
+            ja: `個人の記憶力よりも、ドキュメント化や自動化ツール
+                (正規表現など)を信頼し、チーム全体の成果物のクオリティを
+                底上げするワークフローを追求しています。`,
           },
         ],
       },
