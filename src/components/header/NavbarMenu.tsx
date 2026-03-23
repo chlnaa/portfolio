@@ -66,48 +66,55 @@ export default function NavbarMenu() {
             </span>
           </a>
 
-          <div className='hidden items-center gap-8 md:flex'>
-            <ul className='flex items-center gap-1'>
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className={cn(
-                      'relative rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                      activeSection === item.href.slice(1)
-                        ? 'text-cyan-400 border border-cyan-500/30  shadow-lg shadow-cyan-500/20'
-                        : 'text-muted-foreground hover:text-cyan-400',
-                    )}
-                  >
-                    {activeSection === item.href.slice(1) && (
-                      <motion.span
-                        layoutId='activeNav'
-                        className='absolute inset-0 rounded-md bg-[#ffffff08]'
-                        transition={{
-                          type: 'spring',
-                          bounce: 0.2,
-                          duration: 0.6,
-                        }}
-                      />
-                    )}
-                    <span className='relative z-10'>{item.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className='flex items-center gap-3'>
+            <div className='hidden items-center gap-8 md:flex'>
+              <ul className='flex items-center gap-1'>
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className={cn(
+                        'relative rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                        activeSection === item.href.slice(1)
+                          ? 'text-cyan-400 border border-cyan-500/30  shadow-lg shadow-cyan-500/20'
+                          : 'text-muted-foreground hover:text-cyan-400',
+                      )}
+                    >
+                      {activeSection === item.href.slice(1) && (
+                        <motion.span
+                          layoutId='activeNav'
+                          className='absolute inset-0 rounded-md bg-[#ffffff08]'
+                          transition={{
+                            type: 'spring',
+                            bounce: 0.2,
+                            duration: 0.6,
+                          }}
+                        />
+                      )}
+                      <span className='relative z-10'>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-            <LanguageSwitcher current={language} onChange={setLanguage} />
+              <LanguageSwitcher current={language} onChange={setLanguage} />
+            </div>
+
+            <div className='md:hidden flex items-center gap-2'>
+              <LanguageSwitcher current={language} onChange={setLanguage} />
+              <Button
+                variant='ghost'
+                size='icon'
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label='Open menu'
+              >
+                {isOpen ? <X /> : <Menu />}
+              </Button>
+            </div>
           </div>
-          <Button
-            className='md:hidden'
-            variant='ghost'
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X /> : <Menu />}
-          </Button>
         </div>
 
-        <div className='md:hidden'>
+        <div>
           <MobileMenu
             isOpen={isOpen}
             navItems={navItems}
