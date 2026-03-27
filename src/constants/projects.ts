@@ -136,20 +136,23 @@ export const PROJECTS_DATA: ProjectsData = {
 
   learned: {
     ko: [
-      '프로젝트 초기 설계의 한계를 인지하고, 데이터 정합성을 위해 아키텍처를 과감히 재설계(Refactoring)하는 결단력의 중요성을 배웠습니다.',
-      'useReducer의 데이터 파편화 문제를 해결하며, 복잡한 상태를 중앙 집중식(SSOT)으로 관리할 때 얻는 시스템 안정성을 체득했습니다.',
+      '프로젝트 초기 설계의 한계를 인지하고, 데이터 정합성을 위해 아키텍처를 과감히 재설계하는 결단력의 중요성을 배웠습니다.',
+      `초기 설계에서 useReducer로 관리하던 데이터의 파편화 문제를 인식하고,
+      Zustand 기반 중앙 집중식 구조로 재설계하여 시스템 안정성을 확보했습니다.`,
       '이 프로젝트를 통해 기능 구현보다 데이터 무결성을 우선하는 설계의 중요성을 배웠습니다.',
       'React Query와 Zustand의 역할을 명확히 분리하여 서버 상태와 UI 상태 간의 간섭을 최소화하는 최적의 설계 패턴을 익혔습니다.',
     ],
     en: [
       'Learned the importance of decisive refactoring after recognizing the limitations of initial architectural designs for data consistency.',
-      'Experienced the system stability gained from centralized state management (SSOT) while solving data fragmentation issues with useReducer.',
+      `Recognized the fragmentation issue of data managed by useReducer in the initial design, 
+       and secured system stability by redesigning into a Zustand-based centralized structure.`,
       'This project helped me understand the importance of prioritizing data integrity over quick feature implementation.',
       'Mastered optimal design patterns to minimize interference between server and UI states by clearly separating the roles of React Query and Zustand.',
     ],
     ja: [
-      'プロジェクト初期設計の限界を認識し、データ整合性のためにアーキテクチャを果敢に再設計(Refactoring)する決断力の重要性を学びました。',
-      'useReducerのデータ断片化問題を解決し、複雑な状態を中央集中方式(SSOT)で管理することで得られるシステム安定性を体得しました。',
+      'プロジェクト初期設計の限界を認識し、データ整合性のためにアーキテクチャを果敢に再設計する決断力の重要性を学びました。',
+      `初期設計で useReducer により管理されていたデータの断편化問題を認識し、
+       Zustandベースの中央集権型構造に再設計することでシステムの安定性を確保しました。`,
       'このプロジェクトを通じて、機能実装よりもデータ整合性を優先する設計の重要性を学びました。',
       'React QueryとZustandの役割を明確に分離し、サーバー状態とUI状態の干渉を最小限に抑える最適な設計パターンを習得しました。',
     ],
@@ -175,12 +178,25 @@ export const PROJECTS_DATA: ProjectsData = {
           ja: 'システムデータフローアーキテクチャ',
         },
         description: {
-          ko: `애플리케이션의 데이터 흐름을 단방향 구조로 설계하여 예측 가능한 상태 전이를 보장했습니다.
-      Client → React Query → Supabase API → PostgreSQL → focus_sessions(SSOT) → Client Aggregation 구조를 통해 데이터의 단일 출처와 통계 파생 로직을 명확히 분리했습니다.`,
-          en: `Designed the application with a unidirectional data flow to ensure predictable state transitions.
-      The data pipeline follows: Client → React Query → Supabase API → PostgreSQL → focus_sessions (SSOT) → Client-side Aggregation, clearly separating the source data from derived statistics.`,
+          ko: `애플리케이션의 데이터 흐름을 단방향 구조로 설계하여 예측 가능한 상태 전이를 보장했습니다.      
+              Client → React Query → Supabase API → PostgreSQL 
+              → focus_sessions (SSOT for analytics) + todo → Client Aggregation 구조를 통해 
+              데이터의 단일 출처와 통계 파생 로직을 명확히 분리했습니다. 
+              focus_sessions를 집계 지표의 단일 진실 공급원으로 정의하고, 
+              todo 테이블과 조합하여 완성률 등의 생산성 지표를 클라이언트에서 도출합니다.
+              `,
+          en: `Designed the application's data flow in a unidirectional structure to guarantee predictable state transitions.
+               Through the structure of Client → React Query → Supabase API → PostgreSQL 
+               → focus_sessions (SSOT for analytics) + todo → Client Aggregation, 
+               clearly separated the single source of truth from the statistical derivation logic. 
+               Defined focus_sessions as the single source of truth for aggregated metrics, 
+               and derived productivity indicators such as completion rates on the client side by combining it with the todo table.`,
           ja: `アプリケーションのデータフローを単方向構造で設計し、予測可能な状態遷移を保証しました。
-      Client → React Query → Supabase API → PostgreSQL → focus_sessions(SSOT) → Client Aggregation のパイプラインを通じて、ソースデータと統計派生ロジックを明確に分離しています。`,
+              Client → React Query → Supabase API → PostgreSQL 
+              → focus_sessions (SSOT for analytics) + todo → Client Aggregation という構造を通じて、
+              データの単一ソースと統計派生ロジックを明確に分離しました。
+              focus_sessions を集計指標の単一の真実のリソースとして定義し、
+              todo テーブルと組み合わせることで、完了率などの生産性指標をクライアント側で導出します。`,
         },
       },
       {
@@ -195,13 +211,10 @@ export const PROJECTS_DATA: ProjectsData = {
                클라이언트에서 집계를 수행해 생산성 지표를 계산하도록 설계했습니다.
                이 구조는 Dual-write로 인한 데이터 불일치 위험을 제거합니다.`,
 
-          en: `To maintain data integrity, the focus_sessions table
-               was defined as the Single Source of Truth (SSOT).
-               Instead of storing derived statistics in the database,
-               productivity metrics are calculated through
-               client-side aggregation based on the raw session data.
-               This design removes the risk of data inconsistencies
-               caused by dual-write updates.`,
+          en: `To maintain data integrity, the focus_sessions table was defined as the Single Source of Truth (SSOT).
+               Instead of storing derived statistics in the database, productivity metrics are 
+               calculated through client-side aggregation based on the raw session data. 
+               This design removes the risk of data inconsistencies caused by dual-write updates.`,
 
           ja: `データ整合性を保つため、focus_sessions テーブルを単一の真実のソースとして定義しました。
               加工された統計データをデータベースに保存せず、セッションの生データを基にクライアント側で

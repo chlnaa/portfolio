@@ -16,9 +16,9 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     },
     isPrimary: true,
     description: {
-      ko: '정적인 텍스트 검수에서 나아가 사용자와 직접 상호작용하는 동적인 콘텐츠를 설계하고 구현하고자 프론트엔드 엔지니어로 전향했습니다.',
-      en: 'Pivoted to frontend engineering to design and implement dynamic user interactions, moving beyond static text validation and localization.',
-      ja: '静的テキストの検収から、ユーザーと直接相互作用する動的コンテンツの設計・実装を目指し、フロントエンドエンジニアへ転向しました。',
+      ko: '로컬라이징에서 코드로 반복 작업을 해결한 경험을 계기로, 정적인 텍스트가 아닌 동적인 화면을 직접 설계하고 구현하는 프론트엔드 엔지니어로 전향했습니다.',
+      en: 'Transitioned to frontend engineering after realizing through localization work that I wanted to build the dynamic interfaces users interact with—not just validate the text within them.',
+      ja: 'ローカライズ業務でコードを使って反復作業を解決した経験をきっかけに、静的なテキストではなく動的な画面を自ら設計・実装するフロントエンドエンジニアへ転向しました。',
     },
 
     techStack: [
@@ -61,20 +61,20 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       ja: 'ゲーム開発／ローカライズプロジェクト',
     },
     description: {
-      ko: '정규표현식과 CAT 툴을 활용해 번역 품질과 용어 일관성을 관리했습니다.',
-      en: 'Managed translation quality and terminology consistency using Regex and CAT tools.',
-      ja: '正規表現およびCATツールを活用し、翻訳品質と用語の一貫性を管理しました。',
+      ko: '동료에게 배운 정규표현식과 CAT 툴을 활용해 번역 품질과 용어 일관성을 관리했습니다.',
+      en: 'Managed translation quality and terminology consistency using Regex (learned on the job) and CAT tools.',
+      ja: '同僚から学んだ正規表現とCATツールを活用し、翻訳品質と用語の一貫性を管理しました。',
     },
     achievements: [
       {
-        ko: '정규표현식(Regex)을 활용해 원문 내 HTML 태그를 전환하여 검수 가독성을 높이고 작업 효율을 개선했습니다.',
-        en: 'Improved QA efficiency and readability by utilizing Regular Expressions (Regex) to process HTML tags.',
-        ja: '正規表現(Regex)を活用して原文内のHTMLタグを変換し、検収の可読性を高め、作業効率を改善しました。',
+        ko: '정규표현식을 활용해 원문 내 HTML 태그를 전환하여 검수 가독성을 높이고 작업 효율을 개선했습니다.',
+        en: 'Improved QA efficiency and readability by utilizing Regular Expressions to process HTML tags.',
+        ja: '正規表現を活用して原文内のHTMLタグを変換し、検収の可読性を高め、作業効率を改善しました。',
       },
       {
-        ko: '기존 용어집(Glossary)의 지속적인 유지보수(수정·추가·삭제)를 통해 게임 빌드 내 용어 일관성을 확보했습니다.',
+        ko: '기존 용어집의 지속적인 유지보수(수정·추가·삭제)를 통해 게임 빌드 내 용어 일관성을 확보했습니다.',
         en: 'Maintained and updated glossaries to ensure terminology consistency across game builds.',
-        ja: '既存の用語集(Glossary)の継続的なメンテナンス（修正・追加・削除）を通じて、ゲームビルド内の用語の一貫性を確保しました。',
+        ja: '既存の用語集の継続的なメンテナンス（修正・追加・削除）を通じて、ゲームビルド内の用語の一貫性を確保しました。',
       },
       {
         ko: 'CAT 툴을 활용해 용어 불일치 및 오탈자에 대한 전수 검수를 수행하여 번역 정확도를 높였습니다.',
