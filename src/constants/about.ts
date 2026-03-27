@@ -4,21 +4,20 @@ export const ABOUT_DATA: AboutData = {
   title: 'About Me',
   description: [
     {
-      en: `Drawing from my experience in game localization—where precision is essential—
-           I became interested in engineering systems that maintain strict control over data flow.`,
-      ko: `텍스트와 상호작용의 정밀함이 중요한 게임 로컬라이징 경험을 통해
-           데이터 흐름을 명확하게 통제하는 시스템 설계에 관심을 갖게 되었습니다.`,
-      ja: `テキストと相互作用の精密さが求められるゲームローカライズの経験を通じて、
-           データフローを明確に制御するシステム設計に興味を持つようになりました。`,
-    },
-    {
-      en: `Leveraging my experience in automating QA processes with regular expressions during localization, I apply a systematic approach to frontend development. I focus on structuring complex requirements through clear state modeling while maintaining a strict separation between server-side aggregation and UI state.`,
-      ko: `로컬라이징 현장에서 정규 표현식을 활용해 검수 프로세스를 시스템화하며 효율을 높였던 
-           경험이 있습니다. 이러한 시스템적 사고를 바탕으로, 프론트엔드에서도 복잡한 요구사항을 
-           명확한 상태 모델링으로 구조화하고 서버 상태와 UI 상태를 엄격히 분리하는 설계에 집중합니다.`,
-      ja: `ローカライズ現場で正規表現を活用し、検品プロセスをシステム化して効率を高めた経験があります。
-            このようなシステム的思考に基づき、フロントエンドにおいても複雑な要件を明確な
-          状態モデリングで構造化し、サーバー状態とUI状態を厳格に分離する設計に注力しています。`,
+      en: `At a game localization company, I learned regular expressions from a colleague
+           and applied them to automate HTML tag conversion in source texts.
+           Manual work meant tags were easily missed—after automating,
+           both accuracy and readability improved significantly.
+           That moment of solving a real problem with code
+           was what made me want to build things, not just check them.`,
+      ko: `게임 로컬라이징 현장에서 동료에게 정규표현식을 배워, 원문의 HTML 문자열을 태그로 
+           자동 변환하는 방식을 실무에 적용했습니다. 수작업으로는 태그가 빠지기 쉬웠던 작업이었는데,
+           자동화 이후 누락이 줄고 검수 가독성도 높아졌습니다. 코드로 문제를 해결하는 그 순간이,
+           검수하는 사람이 아니라 직접 만드는 사람이 되고 싶다는 결정적인 계기가 되었습니다.`,
+      ja: `ゲームローカライズ現場で同僚から正規表現を学び、原文のHTMLタグ変換を自動化しました。
+           手作業ではタグが抜けやすかった工程が改善され、精度と可読性が大きく向上しました。
+           コードで課題を解決したその瞬間が、検収する側ではなく、自ら作る側になりたいという
+           決定的なきっかけとなりました。`,
     },
   ],
   quickFacts: [
