@@ -35,7 +35,7 @@ export const SKILLS_DATA: SkillCategory[] = [
         name: 'TypeScript',
         details: [
           {
-            ko: '인터페이스 기반의 컴포넌트 간 데이터 규격( 설계',
+            ko: '인터페이스 기반의 컴포넌트 간 데이터 규격 설계',
             en: 'Designing interface-driven data contracts between components',
             ja: 'インターフェース駆動のコンポーネント間データ契約設計',
           },
@@ -62,18 +62,16 @@ export const SKILLS_DATA: SkillCategory[] = [
                 ドメイン中心の階層的クエリキー設計`,
           },
           {
-            ko: `Zustand 기반 단일 진실 공급원(SSOT) 구축으로 
-                UI 상태의 일관성과 데이터 정합성 확보`,
-            en: 'Establishing a Single Source of Truth (SSOT) with Zustand to ensure UI state consistency',
-            ja: `Zustandベースの単一真実のソース(SSOT)構築による
-                UI状態の一貫性確保`,
+            ko: `Zustand 기반 단일 진실 공급원 구축으로 UI 상태의 일관성과
+                 데이터 정합성 확보`,
+            en: 'Establishing a Single Source of Truth with Zustand to ensure UI state consistency',
+            ja: `Zustandベースの単一真実のソース構築によるUI状態の
+                一貫性確保`,
           },
           {
-            ko: `서버 상태 집계(Aggregation)와 클라이언트 UI 상태의 
-                역할을 명확히 분리`,
+            ko: `서버 상태 집계와 클라이언트 UI 상태의 역할을 명확히 분리`,
             en: 'Clear separation between server state aggregation and client UI state',
-            ja: `サーバー状態の集約(Aggregation)とクライアントUI状態の
-                明確な役割分離`,
+            ja: `サーバー状態の集約とクライアントUI状態の明確な役割分離`,
           },
         ],
       },
