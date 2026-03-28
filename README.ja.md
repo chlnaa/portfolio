@@ -10,7 +10,7 @@
 
 ## 🔗 Live Demo
 
-[👉 ポートフォリオサイトを見る](choinaa-portfolio.vercel.app)
+[👉 ポートフォリオサイトを見る](https://choinaa-portfolio.vercel.app/)
 
 ## 🌟 主な特徴 (Key Highlights)
 

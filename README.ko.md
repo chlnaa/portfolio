@@ -10,7 +10,7 @@
 
 ## 🔗 Live Demo
 
-[👉 포트폴리오 웹사이트 방문하기](choinaa-portfolio.vercel.app)
+[👉 포트폴리오 웹사이트 방문하기](https://choinaa-portfolio.vercel.app/)
 
 ## 🌟 주요 특징
 
