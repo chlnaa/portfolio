@@ -10,7 +10,7 @@
 
 ## 🔗 Live Demo
 
-[👉 Visit My Portfolio Website](choinaa-portfolio.vercel.app)
+[👉 Visit My Portfolio Website](https://choinaa-portfolio.vercel.app/)
 
 ## 🌟 Key Highlights
 
