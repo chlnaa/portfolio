@@ -19,7 +19,7 @@ export function ContactSection() {
         <SectionHeader eyebrow='Contact' title='Get In Touch' />
 
         <motion.div {...fadeInUp} className='mb-8'>
-          <div className='leading-relaxed text-muted-foreground select-none'>
+          <div className='leading-relaxed text-muted-foreground select-none whitespace-pre-line'>
             {content.description.map((line, idx) => (
               <p key={idx}>{line[language]}</p>
             ))}
@@ -29,7 +29,7 @@ export function ContactSection() {
         <motion.div
           {...fadeInUp}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className='flex flex-col items-center text-center'
+          className='flex flex-col items-stretch text-center'
         >
           <div className='grid gap-8 md:grid-cols-2'>
             <div className='flex flex-col gap-4'>
@@ -87,15 +87,15 @@ export function ContactSection() {
                 {content.openToWork.badge[language]}
               </h3>
 
-              <p className='mt-3 text-lg font-semibold text-foreground'>
+              <p className='mt-1 text-lg font-semibold text-foreground'>
                 {content.openToWork.headline[language]}
               </p>
 
-              <p className='mt-3 leading-relaxed text-left text-muted-foreground'>
+              <p className='mt-2 leading-relaxed text-left text-muted-foreground whitespace-pre-line'>
                 {content.openToWork.description.map((item) => item[language])}
               </p>
 
-              <div className='mt-6 flex items-center gap-2'>
+              <div className='mt-3 flex items-center gap-2'>
                 <span className='relative flex h-2.5 w-2.5'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-500 opacity-75' />
                   <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500' />
