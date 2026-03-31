@@ -3,24 +3,21 @@ import type { ContactContent } from '@/types/portfolio';
 export const CONTACT_CONTENT: ContactContent = {
   description: [
     {
-      en: 'Frontend Engineer dedicated to designing reliable systems based on data integrity and building high-performance, user-centric interfaces.',
-      ko: '데이터 무결성을 기반으로 신뢰할 수 있는 시스템을 설계하고, 사용자 중심의 고성능 인터페이스를 구현하는 프론트엔드 엔지니어입니다.',
-      ja: 'データの完全性を基盤に信頼性の高いシステムを設計し、ユーザー中心の高性能インターフェースを実装するフロントエンドエンジニアです。',
-    },
-    {
-      en: 'Integrating my professional background in precise game localization into software design, I contribute to team productivity through logical communication.',
-      ko: '게임 로컬라이징 실무에서 다룬 정밀한 텍스트/상호작용 경험을 소프트웨어 설계에 녹여내며, 논리적인 커뮤니케이션으로 팀의 생산성에 기여합니다.',
-      ja: 'ゲームローカライズ実務で培った精密なテキスト・相互作用の経験をソフトウェア設計に活かし、論理的なコミュニケーションでチームの生産性に貢献します。',
-    },
-    {
-      en: 'I am currently seeking new frontend opportunities and am ready to contribute to both technical challenges and business growth.',
-      ko: '현재 새로운 프론트엔드 기회를 찾고 있으며, 기술적 도전과 비즈니스 성장을 함께 고민할 준비가 되어 있습니다.',
-      ja: '現在、フロントエンドエンジニアとしての新たな機会を探しており、技術的挑戦とビジネスの成長を共に追求する準備ができています。',
-    },
-    {
-      en: 'I typically respond within 24 hours.',
-      ko: '24시간 이내에 답변드리겠습니다.',
-      ja: '通常24時間以内に返信いたします。',
+      ko: `텍스트를 검수하다 화면을 만들게 된 프론트엔드 개발자입니다. 
+          로컬라이징에서 쌓은 꼼꼼함과 일관성에 대한 감각을 개발에 녹이고 있습니다.
+          현재 프론트엔드 포지션을 찾고 있습니다. 
+          24시간 이내에 답변드리겠습니다.`,
+
+      en: ` A frontend developer who went from checking text to building screens.
+      I bring the precision and consistency I developed in game localization
+      into how I write and structure frontend code.
+      Currently looking for frontend opportunities.
+      I typically respond within 24 hours.`,
+
+      ja: `テキストの検収から画面制作へ転向したフロントエンドエンジニアです。
+      ゲームローカライズで培った正確さと一貫性へのこだわりを、フロントエンド開発に活かしています。
+      現在、フロントエンドエンジニアとしての機会を探しています。
+      通常24時間以内に返信いたします。`,
     },
   ],
   openToWork: {
@@ -36,9 +33,15 @@ export const CONTACT_CONTENT: ContactContent = {
     },
     description: [
       {
-        en: 'I am looking for roles where I can leverage my expertise in state management and performance optimization to build high-impact products.',
-        ko: '상태 관리와 성능 최적화 역량을 발휘하여 임팩트 있는 제품 개발에 기여하고, 함께 성장할 수 있는 포지션을 희망합니다.',
-        ja: '状態管理とパフォーマンス最適化のスキルを活かし、価値あるプロダクト開発に貢献しながら共に成長できるポジションを希望しています。',
+        en: `Looking for a frontend role where React and TypeScript are part of the stack.
+             I care about how data flows through an application,
+             and I work best in teams where attention to detail matters.`,
+        ko: `React · TypeScript 기반 프론트엔드 포지션을 찾고 있습니다.
+             데이터 흐름을 명확하게 설계하는 것을 중요하게 생각하며, 
+             꼼꼼하게 일하는 팀에서 함께하고 싶습니다.`,
+        ja: `React・TypeScriptを使用するフロントエンドのポジションを探しています。
+              データがアプリケーション内をどう流れるかを大切にしており、
+              細部へのこだわりを持つチームで働きたいと考えています。`,
       },
     ],
     availability: 'Available for hire',
