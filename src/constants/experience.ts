@@ -16,7 +16,8 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     },
     isPrimary: true,
     description: {
-      ko: '로컬라이징에서 코드로 반복 작업을 해결한 경험을 계기로, 정적인 텍스트가 아닌 동적인 화면을 직접 설계하고 구현하는 프론트엔드 엔지니어로 전향했습니다.',
+      ko: `로컬라이징에서 코드로 반복 작업을 해결한 경험을 계기로, 정적인 텍스트가 아닌 동적인 화면을 직접 설계하고 구현하는 
+            프론트엔드 엔지니어로 전향했습니다.`,
       en: 'Transitioned to frontend engineering after realizing through localization work that I wanted to build the dynamic interfaces users interact with—not just validate the text within them.',
       ja: 'ローカライズ業務でコードを使って反復作業を解決した経験をきっかけに、静的なテキストではなく動的な画面を自ら設計・実装するフロントエンドエンジニアへ転向しました。',
     },
@@ -37,13 +38,13 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       },
       {
         ko: '자료구조, 알고리즘, 정보통신망 등 컴퓨터 과학 전공 과목 이수를 통해 프론트엔드 개발의 기술적 기초를 다졌습니다.',
-        en: 'Strengthened technical foundations through computer science coursework, including Data Structures, Algorithms, and Information and Communications Networks..',
+        en: 'Strengthened technical foundations through computer science coursework, including Data Structures, Algorithms, and Information and Communications Networks.',
         ja: 'データ構造、アルゴリズム、情報通信ネットワークなどの専攻科目を通じて、フロントエンド開発の技術的な基礎を固めました。',
       },
       {
-        ko: '캐싱 전략과 효율적인 데이터 페칭 패턴을 적용하여 애플리케이션의 성능과 사용자 경험을 개선했습니다.',
-        en: 'Implemented optimized data fetching and caching strategies to improve user experience and application performance.',
-        ja: 'キャッシュ戦略と効率的なデータフェッチパターンを適用し、アプリケーションのパフォーマンスとUXを向上させました。',
+        ko: 'TanStack Query의 캐싱 전략을 활용해 불필요한 서버 요청을 줄이고 데이터 동기화 흐름을 개선했습니다.',
+        en: 'Reduced unnecessary server requests and improved data synchronization flow using TanStack Query caching strategies.',
+        ja: 'TanStack Queryのキャッシュ戦略を活用し、不要なサーバーリクエストを削減してデータ同期の流れを改善しました。',
       },
     ],
   },
@@ -135,9 +136,9 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     },
     isCondensed: true,
     description: {
-      ko: '이러닝 서비스 어카운트 관리 및 시스템 운영 보조 업무를 수행했습니다.',
-      en: 'Supported e-learning platform operations by managing user accounts and performing routine system checks.',
-      ja: 'e-ラーニングサービスのアカウント管理およびシステム運営補助業務を担当しました。',
+      ko: 'HTML 동작확인 페이지를 직접 관리하며 코드와 처음 접점을 가졌습니다. 계정 관리 및 시스템 운영 보조 업무를 담당했습니다.',
+      en: 'Managed HTML-based system check pages directly—my first hands-on experience with code.Also handled account management and platform operations support.',
+      ja: 'HTMLで作成された動作確認ページを直接管理し、コードとの最初の接点となりました。アカウント管理およびシステム運営補助業務も担当しました。',
     },
     achievements: [
       {

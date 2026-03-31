@@ -90,25 +90,39 @@ export const PROJECTS_DATA: ProjectsData = {
 
   challenges: [
     {
+      layer: {
+        ko: '클라이언트 상태',
+        en: 'Client State',
+        ja: 'クライアント状態',
+      },
       problem: {
-        ko: `기능 확장 및 외부 DB 연동 과정에서 전역 상태로 관리하던 날짜 데이터가 페이지 간에 간섭을 일으키는 구조적 결함을 발견했습니다.`,
+        ko: `기능 확장 및 외부 DB 연동 과정에서 전역 상태로 관리하던 날짜 데이터가 
+              페이지 간에 간섭을 일으키는 구조적 결함을 발견했습니다.`,
         en: `Identified structural flaws where date data managed in global state caused cross-page interference during feature expansion and DB integration.`,
         ja: `機能拡張の過程で、グローバル状態で管理していた日付データがページ間で干渉を引き起こす構造的な欠陥を発見しました。`,
       },
       solution: {
-        ko: `공통 데이터의 무분별한 전역화를 지양하고, 페이지별 목적에 맞게 지역 상태(useState)로 격리하여 상태 간섭을 원천 차단했습니다.`,
+        ko: `공통 데이터의 무분별한 전역화를 지양하고, 페이지별 목적에 맞게 
+              지역 상태로 격리하여 상태 간섭을 원천 차단했습니다.`,
         en: `Avoided indiscriminate globalization of shared data and isolated it into page-specific local states to eliminate state interference.`,
-        ja: `共通データの無分別なグローバル化を避け、ページごとの目的に合わせてローカル状態(useState)に分離することで干渉を遮断しました。`,
+        ja: `共通データの無分別なグローバル化を避け、ページごとの目的に合わせて
+              ローカル状態に分離することで干渉を遮断しました。`,
       },
       result: {
-        ko: `상태 오염 문제를 근본적으로 해결했으며, 아키텍처의 질은 데이터의 성격과 소유권이 결정한다는 
-              설계 원칙을 확립했습니다.`,
-        en: `Fundamentally resolved state contamination issues and established a design principle that architecture quality is determined by data nature and ownership.`,
-        ja: `状態汚染問題を根本的に解決し、アーキテクチャの質はデータの性質と所有権が決定するという
-              設計原則を確立しました。`,
+        ko: `상태 오염 문제를 근본적으로 해결했습니다. 이후 데이터를 전역으로 올리기 전에
+            "이 데이터가 정말 여러 페이지에 필요한가"를 먼저 따지는 습관이 생겼습니다.`,
+        en: `Fundamentally resolved state contamination issues.
+             Now I ask "does this data actually need to be global?" before lifting state.`,
+        ja: `状態汚染問題を根本的に解決しました。以降、状態をグローバルに引き上げる前に
+             「このデータは本当に複数ページで必要か」を先に考えるようになりました。`,
       },
     },
     {
+      layer: {
+        ko: '데이터 모델링',
+        en: 'Data Modeling',
+        ja: 'データモデリング',
+      },
       problem: {
         ko: `집중 세션 저장과 통계 업데이트를 동시에 처리하는
              Dual-write 구조에서 데이터 정합성 문제가 발생할 가능성을 확인했습니다.`,
@@ -119,17 +133,74 @@ export const PROJECTS_DATA: ProjectsData = {
       },
       solution: {
         ko: `가공된 통계 컬럼을 제거하고 원천 데이터인 focus_sessions를 기반으로 
-        실시간 집계(Aggregation) 쿼리 방식으로 아키텍처를 개편했습니다.`,
+              실시간 집계 쿼리 방식으로 아키텍처를 개편했습니다.`,
         en: `Eliminated derived stat columns and refactored the architecture to use real-time aggregation queries based on the source data, focus_sessions.`,
         ja: `加工された統計カラムを削除し、ソースデータであるfocus_sessionsに基づいた
-            リアルタイム集約(Aggregation)クエリ方式にアーキテクチャを刷新しました。`,
+            リアルタイム集約クエリ方式にアーキテクチャを刷新しました。`,
       },
       result: {
-        ko: `데이터 결함 가능성을 원천 차단하여 시스템 신뢰성을 확보했으며, 
-        데이터 무결성을 보장하는 견고한 데이터 모델링을 완성했습니다.`,
-        en: `Ensured system reliability by eliminating potential data flaws and completed a robust data modeling that guarantees integrity.`,
-        ja: `データ欠損の可能性を根本的に遮断してシステムの信頼性を確保し、
-            データの完全性を保証する堅牢なデータモデリングを完成させました。`,
+        ko: `Dual-write 구조를 제거하고 원천 데이터 기반 집계 방식으로 전환했습니다.
+            기존에는 focus_sessions 저장 후 통계 업데이트가 실패하면 UI에 집중 시간이 표시되지 않거나, 
+            모달에서 2배로 표기되는 문제가 있었는데 구조 자체를 바꾸면서 이런 정합성 오류가 발생할 
+            여지를 없앴습니다. 예상보다 리팩토링 범위가 컸지만, 오히려 전체 데이터 흐름이 단순해졌습니다.`,
+        en: `Eliminated the dual-write structure and switched to real-time aggregation 
+              from focus_sessions as the single source of truth.
+              Previously, a failed stats update after session insert caused issues such as 
+              focus time not appearing in the UI or being displayed as double in the modal.
+              Restructuring at the architecture level removed the root cause entirely.
+              The refactoring scope was larger than expected, but the overall data flow 
+              became significantly simpler as a result.`,
+        ja: `Dual-write構造を削除し、focus_sessionsを唯一のソースとした
+              リアルタイム集約方式に切り替えました。以前は、セッション保存後の統計更新が失敗すると、
+              UIに集中時間が表示されなかったり、モーダルで2倍に表示されるなどの
+              不整合が発生していました。
+              アーキテクチャレベルで構造を変えることで、こうした問題の発生余地をなくしました。
+              リファクタリングは想定より複雑でしたが、全体のデータフローはむしろシンプルになりました。`,
+      },
+    },
+    {
+      layer: {
+        ko: '서버 상태',
+        en: 'Server State',
+        ja: 'サーバー状態',
+      },
+      problem: {
+        ko: `React Query에서 서로 다른 query key를 사용하는 구조로 인해,
+             동일한 Todo 데이터가 페이지 간에 일관되지 않게 표시되는 문제를 발견했습니다.`,
+        en: `Identified a data inconsistency issue where the same Todo data was displayed differently across pages due to separate React Query keys.`,
+        ja: `React Queryで異なるクエリキーを使用していたことで、
+             同一のTodoデータがページ間で一貫して表示されない問題を発見しました。`,
+      },
+      solution: {
+        ko: `Todo 생성 시 특정 날짜 쿼리만 invalidate하던 구조를 개선하여,
+             전체 리스트와 날짜별 쿼리를 함께 갱신하도록 수정했습니다.
+             이를 통해 분리된 캐시 간의 동기화를 보장했습니다.`,
+        en: `Improved the mutation logic to invalidate both date-specific and global todo queries,
+             ensuring synchronization across separate caches.`,
+        ja: `Todo作成時に日付別クエリのみを無効化していた構造を改善し、
+             全体リストと日付別クエリの両方を更新することでキャッシュ間の同期を確保しました。`,
+      },
+      result: {
+        ko: `초기에는 낙관적 업데이트 문제로 판단했지만, 디버깅 과정에서 query key 분리 구조로 인해
+             invalidation 범위가 일부(byDate)에만 적용되고 
+             allTodos 캐시가 갱신되지 않는 문제가 원인임을 확인했습니다.
+
+             이를 해결하기 위해 query key 구조를 재정의하고, onSuccess 중심 구조를 
+             onMutate/onSettled로 재설계해 캐시 간 일관성을 확보했습니다.`,
+        en: `Initially identified the issue as an optimistic update bug,
+             but debugging revealed the root cause:
+             the query key separation meant invalidation was only applied to byDate,
+             leaving the allTodos cache stale.
+             To resolve this, the query key structure was redefined
+             and the logic was redesigned from onSuccess-based post-processing
+             to an onMutate/onSettled-based optimistic update flow,
+             ensuring consistency across caches.`,
+        ja: `当初は楽観的更新のバグと判断しましたが、デバッグの過程でquery keyの分離構造により
+             invalidationの範囲がbyDateのみに適用され、
+             allTodosキャッシュが更新されないことが原因だと確認しました。
+             解決のためにquery key構造を再定義し、onSuccess基盤の後処理方式から
+             onMutate/onSettled基盤の楽観的更新フローに再設計することで
+             キャッシュ間の一貫性を確保しました。`,
       },
     },
   ],

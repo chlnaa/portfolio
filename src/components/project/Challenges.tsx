@@ -13,6 +13,7 @@ export function Challenges({ challenges, language }: ChallengesProps) {
       {challenges.map((c, i) => (
         <Card key={i}>
           <CardContent className='p-6 space-y-4'>
+            <h3 className='text-center'>{c.layer[language]}</h3>
             <div>
               <span className='text-xs uppercase text-red-400'>Problem</span>
               <p className='text-sm pt-1 text-muted-foreground/80'>

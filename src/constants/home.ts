@@ -5,11 +5,11 @@ export const HOME_DATA: HomeData = {
   subtitle: {
     en: `Building consistent, predictable UI by defining clear data flows and state ownership.`,
     ko: `데이터 흐름과 상태를 명확하게 
-         정의하여, 일관성 있고 예측 가능한 
-         UI를 만드는 것을 목표로 합니다.`,
+         정의하여, 일관성 있고 
+         예측 가능한 UI를 만듭니다.`,
     ja: `データの流れと状態を明確に
-        定義し、一貫性があり予測可能な
-        UI構築を目指しています。`,
+        定義し、一貫性があり
+        予測可能なUIを構築します。`,
   },
   description: {
     en: `In game localization, I learned that when consistency breaks—

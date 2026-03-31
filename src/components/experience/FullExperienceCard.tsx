@@ -31,7 +31,7 @@ export default function FullExperienceCard({
           </span>
         </div>
 
-        <p className='text-sm text-zinc-400 leading-relaxed mb-8 max-w-3xl'>
+        <p className='text-sm text-zinc-400 leading-relaxed mb-8 max-w-3xl whitespace-pre-line '>
           {exp.description[language]}
         </p>
 
