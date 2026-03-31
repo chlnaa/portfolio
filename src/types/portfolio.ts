@@ -60,6 +60,7 @@ export interface ArchitectureData {
 }
 
 export interface ProjectChallenge {
+  layer: LocalizedText;
   problem: LocalizedText;
   solution: LocalizedText;
   result: LocalizedText;
